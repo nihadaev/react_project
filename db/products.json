@@ -1,0 +1,320 @@
+{
+    "products": [
+        {
+            "id": 1,
+            "title": "Latte",
+            "price": 109.95,
+            "category": "Hot drink",
+            "image": "https://thumb.tildacdn.com/tild3538-6239-4331-b838-366266663937/-/resize/560x/-/format/webp/photo.png",
+            "count": 1
+        },
+        {
+            "id": 2,
+            "title": "Americano",
+            "price": 109.95,
+            "category": "Hot drink",
+            "image": "https://thumb.tildacdn.com/tild3930-6266-4239-b035-306235393464/-/resize/560x/-/format/webp/photo.png",
+            "count": 1
+        },
+        {
+            "id": 3,
+            "title": "Cappuccino",
+            "price": 109.95,
+            "category": "Hot drink",
+            "image": "https://thumb.tildacdn.com/tild6331-3732-4330-b931-323037313836/-/resize/560x/-/format/webp/photo.png",
+            "count": 1
+        },
+        {
+            "id": 4,
+            "title": "Espresso",
+            "price": 109.95,
+            "category": "Hot drink",
+            "image": "https://thumb.tildacdn.com/tild3738-3837-4236-b132-616434333664/-/resize/560x/-/format/webp/noroot.png",
+            "count": 1
+        },
+        {
+            "id": 5,
+            "title": "Raf",
+            "price": 109.95,
+            "category": "Hot drink",
+            "image": "https://thumb.tildacdn.com/tild6466-6265-4931-b666-353861646164/-/resize/560x/-/format/webp/photo.png",
+            "count": 1
+        },
+        {
+            "id": 6,
+            "title": "Cacao",
+            "price": 109.95,
+            "category": "Hot drink",
+            "image": "https://thumb.tildacdn.com/tild3439-3866-4262-b162-353836373138/-/resize/560x/-/format/webp/photo.png",
+            "count": 1
+        },
+        {
+            "id": 7,
+            "title": "İsti Şokolad",
+            "price": 109.95,
+            "category": "Hot drink",
+            "image": "https://thumb.tildacdn.com/tild6533-6263-4162-b466-613265336633/-/resize/560x/-/format/webp/_.png",
+            "count": 1
+        },
+        {
+            "id": 8,
+            "title": "Flat White",
+            "price": 109.95,
+            "category": "Hot drink",
+            "image": "https://thumb.tildacdn.com/tild6166-6438-4165-b335-336430313131/-/resize/560x/-/format/webp/photo.png",
+            "count": 1
+        },
+        {
+            "id": 9,
+            "title": "Raf Baunti ",
+            "price": 4.5,
+            "rating": 4.9,
+            "category": "Hot drink",
+            "image": "https://thumb.tildacdn.com/tild3632-6434-4462-a330-636536383064/-/resize/560x/-/format/webp/photo.png",
+            "count": 1
+        },
+        {
+            "id": 10,
+            "title": "Çiyələkli Moxito ",
+            "price": 5.0,
+            "rating": 4.7,
+            "category": "Fresh drink",
+            "image": "https://thumb.tildacdn.com/tild6431-3836-4765-b135-663931333236/-/resize/560x/-/format/webp/Untitled-1-01.jpg",
+            "count": 1
+        },
+        {
+            "id": 11,
+            "title": "Ice Latte",
+            "price": 4.3,
+            "rating": 4.5,
+            "category": "Fresh drink",
+            "image": "https://thumb.tildacdn.com/tild3165-6331-4536-a236-383130633364/-/resize/560x/-/format/webp/Untitled-1-03.jpg",
+            "count": 1
+        },
+        {
+            "id": 12,
+            "title": "Hot Chocolate Cake",
+            "price": 10.2,
+            "rating": 4.9,
+            "category": "Deserts",
+            "image": "https://cafecity.az/media/product_image/HOT-CHOCOLATE-CAKE_qo5qMBL.png.600x600_q85_box-0%2C0%2C600%2C600_crop_detail.jpg",
+            "count": 1
+        },
+        {
+            "id": 13,
+            "title": "Tiramisu",
+            "price": 8.0,
+            "rating": 4.8,
+            "category": "Deserts",
+            "image": "https://cafecity.az/media/product_image/TIRAMISU_Xri1xhO.png.600x600_q85_box-0%2C0%2C600%2C600_crop_detail.jpg",
+            "count": 1
+        },
+        {
+            "id": 14,
+            "title": "Sezar Salat",
+            "price": 11.8,
+            "rating": 5.0,
+            "category": "Salads",
+            "description": "Toyuq filesi, sarımsaqlı krutonlar, parmesan pendiri, aysberq kahı, pomidor, Sezar sousu",
+            "image": "https://cafecity.az/media/product_image/CAESAR-SALAD_gehNbhJ.png.600x600_q85_box-0%2C0%2C600%2C600_crop_detail.jpg",
+            "count": 1
+        },
+        {
+            "id": 15,
+            "title": " Paytaxt Salatı",
+            "price": 9.00,
+            "rating": 4.7,
+            "category": "Salads",
+            "description": "Təzə xiyar, turşu xiyar, kartof, kök, yumurta, yaşıl noxud, mayonez, bişmiş toyuq filesi, pomidor və pesto sousu ilə qara çörək, kahı, göyərti, turp, balzam sousu",
+            "image": "https://cafecity.az/media/product_image/OLIVIER-SALAD_n3SYAB2.png.600x600_q85_box-0%2C0%2C600%2C600_crop_detail.jpg",
+            "count": 1
+        },
+        {
+            "id": 16,
+            "title": "Klab Sendviç",
+            "price": 9.00,
+            "rating": 4.8,
+            "category": "Burgers",
+            "description": "Tost, toyuq filesi, hinduşka vetçinası, omlet, pomidor, xiyar, turşu xiyar, quda pendiri, ədviyyatlı sous, kartof fri",
+            "image": "https://cafecity.az/media/product_image/CLUB-SANDWICH_06xu0ql.png.600x600_q85_box-0%2C0%2C600%2C600_crop_detail.jpg",
+            "count": 1
+        },
+        {
+            "id": 17,
+            "title": "Espresso Tonik",
+            "price": 8.0,
+            "saleprice": 6.0,
+            "rating": 4.2,
+            "category": "Fresh drink",
+            "description": "",
+            "image": "https://thumb.tildacdn.com/tild3736-3462-4332-b332-333266393966/-/resize/560x/-/format/webp/Untitled-1-04.jpg",
+            "count": 1
+        },
+
+        {
+            "id": 18,
+            "title": "Blueberry Muffin",
+            "price": 10.0,
+            "saleprice": 8.0,
+            "rating": 4.2,
+            "category": "Fresh drink",
+            "description": "",
+            "image": "https://thumb.tildacdn.com/tild6436-6336-4233-b435-643334653463/-/resize/560x/-/format/webp/Untitled-1-05.jpg",
+            "count": 1
+        },
+        {
+            "id": 19,
+            "title": "Portğallı Bumble",
+            "price": 12.0,
+            "saleprice": 9.0,
+            "rating": 4.2,
+            "category": "Fresh drink",
+            "description": "",
+            "image": "https://thumb.tildacdn.com/tild6265-6130-4431-a434-356633626462/-/resize/560x/-/format/webp/Untitled-1-02.jpg",
+            "count": 1
+        },
+        {
+            "id": 20,
+            "title": "Portğallı Kofe",
+            "price": 12.0,
+            "saleprice": 9.0,
+            "rating": 4.2,
+            "category": "Hot drink",
+            "description": "",
+            "image": "https://thumb.tildacdn.com/tild3135-6538-4032-b866-363938383562/-/resize/560x/-/format/webp/photo.png",
+            "count": 1
+        }
+    ],
+
+
+    "saleproducts": [
+        {
+            "id": 17,
+            "title": "Espresso Tonik",
+            "price": 8.0,
+            "saleprice": 6.0,
+            "sale" : 20,
+            "rating": 4.2,
+            "category": "Fresh drink",
+            "description": "",
+            "image": "https://thumb.tildacdn.com/tild3736-3462-4332-b332-333266393966/-/resize/560x/-/format/webp/Untitled-1-04.jpg",
+            "count": 1
+        },
+        {
+            "id": 18,
+            "title": "Blueberry Muffin",
+            "price": 10.0,
+            "saleprice": 8.0,
+            "sale" : 20,
+            "rating": 4.2,
+            "category": "Fresh drink",
+            "description": "",
+            "image": "https://thumb.tildacdn.com/tild6436-6336-4233-b435-643334653463/-/resize/560x/-/format/webp/Untitled-1-05.jpg",
+            "count": 1
+        },
+        {
+            "id": 19,
+            "title": "Portğallı Bumble",
+            "price": 12.0,
+            "saleprice": 9.0,
+            "sale" : 20,
+            "rating": 4.2,
+            "category": "Fresh drink",
+            "description": "",
+            "image": "https://thumb.tildacdn.com/tild6265-6130-4431-a434-356633626462/-/resize/560x/-/format/webp/Untitled-1-02.jpg",
+            "count": 1
+        },
+        {
+            "id": 20,
+            "title": "Portğallı Kofe",
+            "price": 12.0,
+            "saleprice": 9.0,
+            "sale" : 20,
+            "rating": 4.2,
+            "category": "Hot drink",
+            "description": "",
+            "image": "https://thumb.tildacdn.com/tild3135-6538-4032-b866-363938383562/-/resize/560x/-/format/webp/photo.png",
+            "count": 1
+        }
+
+    ],
+
+
+    "popularproducts": [
+        {
+            "id": 9,
+            "title": "Raf Baunti ",
+            "price": 4.5,
+            "rating": 4.9,
+            "category": "Hot drink",
+            "image": "https://thumb.tildacdn.com/tild3632-6434-4462-a330-636536383064/-/resize/560x/-/format/webp/photo.png",
+            "count": 1
+        },
+        {
+            "id": 10,
+            "title": "Çiyələkli Moxito ",
+            "price": 5.0,
+            "rating": 4.7,
+            "category": "Fresh drink",
+            "image": "https://thumb.tildacdn.com/tild6431-3836-4765-b135-663931333236/-/resize/560x/-/format/webp/Untitled-1-01.jpg",
+            "count": 1
+        },
+        {
+            "id": 11,
+            "title": "Ice Latte",
+            "price": 4.3,
+            "rating": 4.5,
+            "category": "Fresh drink",
+            "image": "https://thumb.tildacdn.com/tild3165-6331-4536-a236-383130633364/-/resize/560x/-/format/webp/Untitled-1-03.jpg",
+            "count": 1
+        },
+        {
+            "id": 12,
+            "title": "Hot Chocolate Cake",
+            "price": 10.2,
+            "rating": 4.9,
+            "category": "Deserts",
+            "image": "https://cafecity.az/media/product_image/HOT-CHOCOLATE-CAKE_qo5qMBL.png.600x600_q85_box-0%2C0%2C600%2C600_crop_detail.jpg",
+            "count": 1
+        },
+        {
+            "id": 13,
+            "title": "Tiramisu",
+            "price": 8.0,
+            "rating": 4.8,
+            "category": "Deserts",
+            "image": "https://cafecity.az/media/product_image/TIRAMISU_Xri1xhO.png.600x600_q85_box-0%2C0%2C600%2C600_crop_detail.jpg",
+            "count": 1
+        },
+        {
+            "id": 14,
+            "title": "Sezar Salat",
+            "price": 11.8,
+            "rating": 5.0,
+            "category": "Salads",
+            "description": "Toyuq filesi, sarımsaqlı krutonlar, parmesan pendiri, aysberq kahı, pomidor, Sezar sousu",
+            "image": "https://cafecity.az/media/product_image/CAESAR-SALAD_gehNbhJ.png.600x600_q85_box-0%2C0%2C600%2C600_crop_detail.jpg",
+            "count": 1
+        },
+        {
+            "id": 15,
+            "title": " Paytaxt Salatı",
+            "price": 9.00,
+            "rating": 4.7,
+            "category": "Salads",
+            "description": "Təzə xiyar, turşu xiyar, kartof, kök, yumurta, yaşıl noxud, mayonez, bişmiş toyuq filesi, pomidor və pesto sousu ilə qara çörək, kahı, göyərti, turp, balzam sousu",
+            "image": "https://cafecity.az/media/product_image/OLIVIER-SALAD_n3SYAB2.png.600x600_q85_box-0%2C0%2C600%2C600_crop_detail.jpg",
+            "count": 1
+        },
+        {
+            "id": 16,
+            "title": "Klab Sendviç",
+            "price": 9.00,
+            "rating": 4.8,
+            "category": "Burgers",
+            "description": "Tost, toyuq filesi, hinduşka vetçinası, omlet, pomidor, xiyar, turşu xiyar, quda pendiri, ədviyyatlı sous, kartof fri",
+            "image": "https://cafecity.az/media/product_image/CLUB-SANDWICH_06xu0ql.png.600x600_q85_box-0%2C0%2C600%2C600_crop_detail.jpg",
+            "count": 1
+        }
+    ]
+}
