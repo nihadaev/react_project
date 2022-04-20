@@ -2,7 +2,11 @@ const initState = {
     products: [],
     popular: [],
     cart: [],
-    saleproducts: []
+    saleproducts: [],
+    subscribers: [],
+    wish: [],
+    story: [],
+    usercontacts: []
 }
 
 export default function reducer(state = initState, action) {
@@ -21,7 +25,7 @@ export default function reducer(state = initState, action) {
                 ...state, popular: action.payload
             }
         //POPULAR PRODUCTS
-
+        
         //SALE PRODUCTS
         case "SALE":
             return {
@@ -29,13 +33,23 @@ export default function reducer(state = initState, action) {
             }
         //SALE PRODUCTS
 
+        case "STORY":
+            return {
+                ...state, story: action.payload
+            }
         // ADD TO CART
         case "ADD":
             return {
                 ...state, cart: [...state.cart, state.products.find(e => e.id === action.payload)]
             }
         //ADD TO CART
-
+        
+        //ADD TO WISHLIST
+            case "WISH": 
+            return {
+                ...state, wish: [...state.wish,state.products.find(e => e.id === action.payload)]
+            }
+        //ADD TO WISHLIST
         
         case "INCCOUNT":
             return {
@@ -47,8 +61,48 @@ export default function reducer(state = initState, action) {
                 })]
 
             }
+        case "DELETE": 
+            return {
+                ...state, cart: [...state.cart.filter(e => e.id !== action.payload)]
+            }
+        case "DEGCOUNT":
+            return {
+                ...state, cart: [...state.cart.map(e => {
+                    if (e.id === action.payload) {
+                    e.count--
+ 
+                    }
+                    return e
+                 })]
+    
+            }
+
+        case "TOTAL": 
+            return {
+                ...state, cart: [...state.cart.map(e => {
+                    if (e.id === action.payload) {
+                        e.total = e.price * e.count
+                    }
+                    return e
+                })]
+            }
+            
+            case "SENDUSER":
+
+                return {
+                    ...state, usercontacts: action.payload
+                }
+
+            //SEND SUBSCRIBER
+                case "SUBSCRIBE" :
+               return {
+                    ...state, subscribers: [...state.subscribers, action.payload]
+                }
+            //SEND SUBSCRIBER
         default:
             return state
     }
+
+    
 
 }

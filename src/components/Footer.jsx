@@ -1,7 +1,67 @@
-import React from 'react'
+import React, {useState} from 'react'
 import { NavLink } from 'react-router-dom'
 
+// USE REDUX
+import { useSelector } from 'react-redux'
+import { useDispatch } from 'react-redux'
+// USE REDUX
+
+// SWEETALERT
+import swal from 'sweetalert';
+// SWEETALERT
+
 function Footer() {
+    const state = useSelector(state => state)
+    const dispatch = useDispatch()
+
+    // SUBSCRIBE NEWS
+    const { subscribers } = useSelector(state => state)
+    const [subscriber,setSubscriber] = useState({})
+
+    const [subscribersData,setSubscribersData] = useState([
+        {
+            id: 1,
+            email: "nihadaev@mail.ru"
+        }
+    ])
+
+
+    const sendSubscriber = (e) => {
+        e.preventDefault()
+        
+        let check = subscribersData.some(el => el.email === subscriber.email)
+        if(check){
+            
+            swal({
+                title: "Xəbərlərimiz siz tərəfdən izlənilir!",
+                icon: "error",
+              });
+        }else{
+            setSubscribersData([...subscribersData, subscriber])
+            dispatch({type:"SUBSCRIBE",payload: subscriber})
+            swal({
+                title: "Ən son xəbərlərimiz sizin emailinizə gondəriləcək!",
+                icon: "success",
+              });
+        }
+        
+        
+        
+    }
+    const handleChange = (e) => {
+        let subscriberid;
+        if (subscribersData.length>0){
+         subscriberid = Math.max(...subscribersData.map(el => el.id));
+        } else{
+            subscriberid= 0;
+        }
+        
+            setSubscriber({id: subscriberid+1, [e.target.name] : e.target.value})
+        
+        
+    }
+    
+    //SUBSCRIBE NEWS
     return (
         <div className='myfooter'>
             <div className="container">
@@ -10,13 +70,13 @@ function Footer() {
                         <h2>Kontaktlarımız</h2>
                         <ul>
                             <li>
-                                <span><i class="fa-solid fa-location-dot"></i></span> <span> Caspian Business Center, 42 J. Jabbarli, Baku</span>
+                                <span><i className="fa-solid fa-location-dot"></i></span> <span> Caspian Business Center, 42 J. Jabbarli, Baku</span>
                             </li>
                             <li>
-                                <span><i class="fa-solid fa-phone"></i></span> <span>+994-51-624-22-19</span>
+                                <span><i className="fa-solid fa-phone"></i></span> <span>+994-51-624-22-19</span>
                             </li>
                             <li>
-                                <span><i class="fa-solid fa-envelope"></i></span> <span>nihadaev@mail.ru</span>
+                                <span><i className="fa-solid fa-envelope"></i></span> <span>nihadaev@mail.ru</span>
                             </li>
                         </ul>
                     </div>
@@ -28,7 +88,7 @@ function Footer() {
                                 <NavLink to="/about">Haqqımızda</NavLink>
                             </li>
                             <li>
-                                <NavLink to="/testimonials">Rəylər</NavLink>
+                                <NavLink to="/contacts">Kontaktlarımız</NavLink>
                             </li>
                             <li>
                                 <NavLink to="/menu">Menü</NavLink>
@@ -58,8 +118,8 @@ function Footer() {
                                 <span className='news'>Ən Son Xəbərlərimizi və Tədbirlərimizi Almaq üçün Qeydiyyatdan Keçin</span>
                             </li>
                             <li>
-                                <form className='footer-form'>
-                                    <input type="text" value='E-poçt ünvanınızı daxil edin' />
+                                <form className='footer-form' onSubmit={ (e) => sendSubscriber(e)}>
+                                    <input type="email" name='email' placeholder='E-poçt ünvanınızı daxil edin' onChange={(e) => handleChange(e)} />
                                     <button >İzlə</button>
                                 </form>
 

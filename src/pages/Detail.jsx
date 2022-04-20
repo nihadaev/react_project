@@ -1,19 +1,16 @@
 import React, { useEffect, useState } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
-import { Swiper, SwiperSlide } from "swiper/react";
-import "swiper/css";
-import "swiper/css/pagination";
-import "swiper/css/grid";
-import swal from 'sweetalert'
-
 import { Link } from 'react-router-dom';
-import { Pagination } from "swiper";
-function Menu() {
+import { useParams } from 'react-router-dom'
+// SWEETALERT
+import swal from 'sweetalert';
+// SWEETALERT
 
+
+function Detail() {
     useEffect(() => {
         window.scrollTo(0, 0)
     }, [])
-
     const { products } = useSelector(state => state)
 
     const [cat, setCat] = useState([])
@@ -26,68 +23,82 @@ function Menu() {
     }, [products])
 
     const categories = Array.from(new Set(cat));
+    const { category } = useParams()
+
+    const [data, setData] = useState([])
 
 
-    const { cart } = useSelector(state => state)
+
+    useEffect(() => {
+        if (category == 'salads') {
+            
+            products && setData(products.filter(e => e.category == 'Salads'))
+        }else if(category == 'deserts'){
+            setData(products.filter(e => e.category == 'Deserts'))
+        }else if(category == 'hotdrink'){
+            setData(products.filter(e => e.category == 'Hot drink'))
+        }else if(category == 'freshdrink'){
+            setData(products.filter(e => e.category == 'Fresh drink'))
+        } else if (category == 'burgers'){
+            setData(products.filter(e => e.category == 'Burgers'))
+        }
+
+    }, [category, products])
+
+    console.log(data);
+
+    const {cart} = useSelector(state => state)
     const dispatch = useDispatch()
-    // ADD TO CART
-    const addtocart = (id) => {
+     // ADD TO CART
+     const addtocart = (id) => {
         console.log(id);
         let check = cart.some(e => e.id === id)
-        if(check) {
-            dispatch({ type: "INCCOUNT", payload: id })
-            dispatch ({type: "TOTAL", payload: id})
-        } else{
+        check ?
+            dispatch({ type: "INCCOUNT", payload: id }) :
             dispatch({ type: "ADD", payload: id })
-        }
-        
-            
 
     }
     // ADD TO CART
 
+    
 
-
-    const { wish } = useSelector(state => state)
+    const {wish} = useSelector(state => state)
     //ADD TO WISHLIST
-    const addToWishlist = (id) => {
-        let check = wish.some(e => e.id === id)
-        check ?
-            swal({
-                title: "Əlavə olunub!",
-                icon: "error",
-            })
-            :
-            dispatch({ type: "WISH", payload: id })
+    const addToWishlist = (id) =>{
+        let check = wish.some(e => e.id ===id)
+        check ? 
+        swal({
+            title: "Əlavə olunub!",
+            icon: "error",
+          })
+        :
+        dispatch({type: "WISH", payload: id})
         swal({
             title: "Əlavə olundu!",
             icon: "success",
-        })
-
+          })
+          
     }
-    // ADD TO WISHLIST
-    
-    // OPEN OR CLOSE MODAL
-    const [mymodal, setMymodal] = useState(false)
-    // OPEN OR CLOSE MODAL
+   // ADD TO WISHLIST
 
-    //DATA FOR MODAL
-    const [moreData, setMoreData] = useState({})
-    
-    //DATA FOR MODAL
-    // SET DATA FOR MODAL
-    const readMore = (id) => {
-        setMymodal(!mymodal)
-        let a = products.find(e => e.id === id)
-        setMoreData(a)
-    }
-    // SET DATA FOR MODAL
+   // OPEN OR CLOSE MODAL
+   const [mymodal, setMymodal] = useState(false)
+   // OPEN OR CLOSE MODAL
 
-    
+   //DATA FOR MODAL
+   const [moreData, setMoreData] = useState({})
+   
+   //DATA FOR MODAL
+   // SET DATA FOR MODAL
+   const readMore = (id) => {
+       setMymodal(!mymodal)
+       let a = products.find(e => e.id === id)
+       setMoreData(a)
+   }
+   // SET DATA FOR MODAL
     return (
-
         <div className='menu-page'>
-            <div className={mymodal ? 'mymodal opened' : 'mymodal'}>
+             <div className={mymodal ? 'mymodal opened' : 'mymodal'}>
                 <div className="mymodal-content">
 
                     <div className="close-content" onClick={() => setMymodal(!mymodal)}>
@@ -126,18 +137,18 @@ function Menu() {
                         <div className="menu-page-list-content">
                             {
                                 categories.map((index, key) => (
-                                    <Link to={"/menu/" + index.toLowerCase().replaceAll(' ', '')} key={key}><h3 > {index} </h3></Link>
+                                    <Link to={"/menu/" + index.toLowerCase().replaceAll(' ', '')}><h3 key={key}> {index} </h3></Link>
                                 ))
                             }
                         </div>
                     </div>
                     <div className="menu-page-products">
-                        <div className="menu-page-products-content">
+                        { <div className="menu-page-products-content">
                             {
-                                products.map((index, key) => (
+                                data.map((index, key) => (
                                     // <div className="products-card" key={key}>
                                     //     <div className="products-card-image">
-                                    //         <img src={index.image} alt="" />
+                                    //         <img src={index.image} alt="" className='w-100' />
                                     //     </div>
                                     //     <div className="products-card-content">
                                     //         <p> <i className="fa-solid fa-star"></i> {index.rating} </p>
@@ -146,9 +157,9 @@ function Menu() {
                                     //     </div>
                                     // </div>
                                     <div className="products-card" key={key}>
-                                        <div className="mycard-img w-100" >
-                                            <img src={index.image} alt="" className='w-100  h-100' />
-
+                                            <div className="mycard-img w-100" >
+                                            <img src={index.image} alt="" className='w-100' />
+                                            
                                             <div className="mycard-img-overlay">
                                                 <ul>
                                                     <li>
@@ -175,18 +186,20 @@ function Menu() {
                                             <p> {index.price} ₼ </p>
 
                                         </div>
-
+ 
                                     </div>
                                 ))
                             }
                         </div>
+                        
+                        }
+                        
                     </div>
                 </div>
-
             </div>
 
         </div>
     )
 }
 
-export default Menu
+export default Detail

@@ -21,6 +21,10 @@ import { useSelector } from 'react-redux'
 import { useDispatch } from 'react-redux'
 // USE REDUX
 
+// SWEETALERT
+import swal from 'sweetalert';
+// SWEETALERT
+
 function Home() {
     //AOS
 
@@ -45,6 +49,13 @@ function Home() {
     const { cart } = useSelector(state => state)
     // CART
 
+    // STORY
+    const {story} = useSelector (state => state)
+    //STORY
+    
+    //WISHLIST
+    const { wish } = useSelector(state => state)
+    //WISHLIST
 
     const state = useSelector(state => state)
 
@@ -54,8 +65,10 @@ function Home() {
 
     //DATA FOR MODAL
     const [moreData, setMoreData] = useState({})
-    console.log(moreData);
+    
     //DATA FOR MODAL
+
+    
 
 
     // SET DATA FOR MODAL
@@ -68,7 +81,7 @@ function Home() {
 
     // ADD TO CART
     const addtocart = (id) => {
-        console.log(id);
+        
         let check = cart.some(e => e.id === id)
         check ?
             dispatch({ type: "INCCOUNT", payload: id }) :
@@ -77,12 +90,44 @@ function Home() {
     }
     // ADD TO CART
 
-    console.log(cart);
+    //ADD TO WISHLIST
+    const addToWishlist = (id) =>{
+        let check = wish.some(e => e.id ===id)
+        check ? 
+        swal({
+            title: "Əlavə olunub!",
+            icon: "error",
+          })
+        :
+        dispatch({type: "WISH", payload: id})
+        swal({
+            title: "Əlavə olundu!",
+            icon: "success",
+          })
+          
+    }
+   // ADD TO WISHLIST
+   
+  
+   useEffect(() => {
+      
+        window.scrollTo(0, 0)
+       
+    
+  }, [])
 
+  
+  
+      
     return (
 
 
-        <>
+        <>  
+        
+            {/* <button className="btn btn-success scroll-to"  >
+                GO
+            </button> */}
+
             <div className={mymodal ? 'mymodal opened' : 'mymodal'}>
                 <div className="mymodal-content">
 
@@ -110,7 +155,7 @@ function Home() {
                         <div className="add-to-cart-content w-100">
                             <input type="text" value={moreData.count} />
                             <button onClick={() => addtocart(moreData.id)}> Səbətə Əlavə Et</button>
-                            <span className='wish'><i className="fa-solid fa-heart"></i></span>
+                            <span className='wish' onClick={() => addToWishlist(moreData.id)} ><i className="fa-solid fa-heart"></i></span>
                         </div>
                     </div>
                 </div>
@@ -124,12 +169,12 @@ function Home() {
                     slidesPerView={1}
                     spaceBetween={30}
                     autoplay={{
-                        delay: 2000,
+                        delay: 3000,
                         disableOnInteraction: false,
                         pauseOnMouseEnter: true,
                     }}
 
-                    speed={1500}
+                    speed={2000}
                     effect={"cube"}
                     grabCursor={true}
                     cubeEffect={{
@@ -141,24 +186,24 @@ function Home() {
                     className="mySwiper">
 
                     <SwiperSlide>
-                        <div className="different-pages-menu">
-                            <div className="container">
+                        
+                            <div className="different-pages-menu">
                                 <div className="different-pages-content">
                                     <h2>Bizim Menümuz</h2>
                                     <NavLink to="/menu">Ətraflı</NavLink>
                                 </div>
                             </div>
-                        </div>
+                        
                     </SwiperSlide>
 
                     <SwiperSlide>
                         <div className="different-pages-courier">
-                            <div className="container">
+                            
                                 <div className="different-pages-content">
                                     <h2>Şəhərin ən dadlı  </h2>
                                     <h2>isti içkiləri</h2>
                                 </div>
-                            </div>
+                            
                         </div>
                     </SwiperSlide>
 
@@ -212,7 +257,7 @@ function Home() {
                                             <div className="mycard-img-overlay">
                                                 <ul>
                                                     <li>
-                                                        <span>
+                                                        <span onClick={() => addToWishlist(index.id)} >
                                                             <i className="fa-solid fa-heart"></i>
                                                         </span>
                                                     </li>
@@ -280,7 +325,7 @@ function Home() {
                         <div className="action-1">
                             <img src="https://sun9-88.userapi.com/impg/doK3wZCuGh6hKvKCRz51M_YQiCY1zvXSfe3pOw/l1dxNJnDMdY.jpg?size=564x698&quality=95&sign=90081e8b0857b462e78a1e1bb53569e5&type=album" alt="" className='w-100 h-100' />
                             <div className="action-1-content">
-                                <span>1+1 Aksiyası</span>
+                                <span data-aos="fade-down">1+1 Aksiyası</span>
                             </div>
                         </div>
                         <div className="action-2">
@@ -435,7 +480,7 @@ function Home() {
                                 all started at a small rented building on Jalan Kaliurang. By 2019, Couvee has 5 branches, one of them located in Jakarta.</p>
 
                             <div className="link-to-story w-100">
-                                <NavLink to="/story">
+                                <NavLink to="/about">
                                     Ətraflı
                                 </NavLink>
                             </div>
