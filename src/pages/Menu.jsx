@@ -6,7 +6,7 @@ import "swiper/css/pagination";
 import "swiper/css/grid";
 import swal from 'sweetalert'
 
-import { Link } from 'react-router-dom';
+import { Link, NavLink } from 'react-router-dom';
 import { Pagination } from "swiper";
 function Menu() {
 
@@ -126,7 +126,7 @@ function Menu() {
                         <div className="menu-page-list-content">
                             {
                                 categories.map((index, key) => (
-                                    <Link to={"/menu/" + index.toLowerCase().replaceAll(' ', '')} key={key}><h3 > {index} </h3></Link>
+                                    <NavLink to={"/menu/" + index.toLowerCase().replaceAll(' ', '')} key={key}><h3 > {index} </h3></NavLink>
                                 ))
                             }
                         </div>
