@@ -50,6 +50,11 @@ export default function reducer(state = initState, action) {
                 ...state, wish: [...state.wish,state.products.find(e => e.id === action.payload)]
             }
         //ADD TO WISHLIST
+
+        case "DELETEFROMWISH":
+            return {
+                ...state, wish: [...state.wish.filter(e => e.id !== action.payload)]
+            }
         
         case "INCCOUNT":
             return {
@@ -90,7 +95,7 @@ export default function reducer(state = initState, action) {
             case "SENDUSER":
 
                 return {
-                    ...state, usercontacts: action.payload
+                    ...state, usercontacts: [...state.usercontacts, action.payload]
                 }
 
             //SEND SUBSCRIBER

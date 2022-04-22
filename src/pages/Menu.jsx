@@ -50,20 +50,8 @@ function Menu() {
 
     const { wish } = useSelector(state => state)
     //ADD TO WISHLIST
-    const addToWishlist = (id) => {
-        let check = wish.some(e => e.id === id)
-        check ?
-            swal({
-                title: "Əlavə olunub!",
-                icon: "error",
-            })
-            :
-            dispatch({ type: "WISH", payload: id })
-        swal({
-            title: "Əlavə olundu!",
-            icon: "success",
-        })
-
+    const addToWishlist = (id) => {   
+        dispatch({ type: "WISH", payload: id })
     }
     // ADD TO WISHLIST
     
@@ -152,9 +140,16 @@ function Menu() {
                                             <div className="mycard-img-overlay">
                                                 <ul>
                                                     <li>
-                                                        <span onClick={() => addToWishlist(index.id)} >
-                                                            <i className="fa-solid fa-heart"></i>
-                                                        </span>
+                                                        {
+                                                            wish.some( e => e.id === index.id ) ?
+                                                            <span className='addedtowish' onClick={() => dispatch({type: "DELETEFROMWISH", payload: index.id})}>
+                                                                <i className="fa-solid fa-heart"></i>
+                                                            </span> :
+                                                            <span onClick={() => addToWishlist(index.id)} >
+                                                                <i className="fa-solid fa-heart"></i>
+                                                            </span>
+                                                        }
+                                                        
                                                     </li>
                                                     <li>
                                                         <span className='seemore' onClick={() => readMore(index.id)}>

@@ -6,8 +6,22 @@ import card from '../images/card.png'
 import { useSelector } from 'react-redux'
 import { useDispatch } from 'react-redux'
 
+// AOS
+import Aos from 'aos';
+import 'aos/dist/aos.css'
+
+//AOS
+
 
 function Header() {
+
+     //AOS
+
+     useEffect(() => {
+        Aos.init()
+    }, [])
+
+    //AOS
     const [menu, setMenu] = useState(false)
     const { cart } = useSelector(state => state)
     const {products} = useSelector(state => state)
@@ -149,33 +163,33 @@ function Header() {
 
                         <div className="header-list h-100">
                             <ul>
-                                <li><NavLink to="/">Ana səhifə</NavLink></li>
-                                <li className="menu"><NavLink to="/menu" className="menu1" >Menü
+                                <li data-aos="fade-down"  data-aos-delay="150"><NavLink to="/">Ana səhifə</NavLink></li>
+                                <li data-aos="fade-down"  data-aos-delay="250" className="menu"><NavLink to="/menu" className="menu1" >Menü
 
                                 </NavLink>
                                     <div className="menuoverlay">
                                         <ul>
-                                            <li>
+                                            <li >
                                                 <NavLink to="/menu/hotdrink">İsti İçkilər</NavLink>
                                             </li>
-                                            <li>
+                                            <li >
                                                 <NavLink to="/menu/deserts">Desertlər</NavLink>
                                             </li>
-                                            <li>
+                                            <li >
                                                 <NavLink to="/menu/burgers">Burgerlər</NavLink>
                                             </li>
-                                            <li>
+                                            <li >
                                                 <NavLink to="/menu/salads">Salatlar</NavLink>
                                             </li>
-                                            <li>
+                                            <li >
                                                 <NavLink to="/menu/freshdrink">Sərin İçkilər</NavLink>
                                             </li>
                                         </ul>
                                     </div>
                                 </li>
-                                <li><NavLink to="/about">Haqqımızda</NavLink></li>
-                                <li><NavLink to="/location">Franşız</NavLink></li>
-                                <li><NavLink to="/contacts">Kontaktlarımız</NavLink></li>
+                                <li data-aos="fade-down"  data-aos-delay="300"><NavLink to="/about">Haqqımızda</NavLink></li>
+                                <li data-aos="fade-down"  data-aos-delay="350"><NavLink to="/blogs">Bloqlar</NavLink></li>
+                                <li data-aos="fade-down"  data-aos-delay="400"><NavLink to="/contacts">Kontaktlarımız</NavLink></li>
                             </ul>
                         </div>
 
@@ -187,7 +201,7 @@ function Header() {
                                     <span><i className="fa-solid fa-bars" onClick={() => setMenu(!menu)}></i></span>
                                 </li>
                                 <li>
-                                    <NavLink to="/wishlist">
+                                    <NavLink to="/profile/wish">
                                     <i className="fa-regular fa-heart"></i>
                                     </NavLink>
                                 </li>

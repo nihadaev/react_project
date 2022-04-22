@@ -42,6 +42,10 @@ const [suremodaldata,setSuremodaldata] = useState({})
   
   const deleteItem = (id) =>{
     dispatch({type: "DELETE", payload: id})
+    if(suremodal){
+      setSuremodal(!suremodal)
+    }
+    
   }
 // ADD TO CART
   let totalamount=0

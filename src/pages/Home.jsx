@@ -92,19 +92,7 @@ function Home() {
 
     //ADD TO WISHLIST
     const addToWishlist = (id) =>{
-        let check = wish.some(e => e.id ===id)
-        check ? 
-        swal({
-            title: "Əlavə olunub!",
-            icon: "error",
-          })
-        :
-        dispatch({type: "WISH", payload: id})
-        swal({
-            title: "Əlavə olundu!",
-            icon: "success",
-          })
-          
+        dispatch({type: "WISH", payload: id})   
     }
    // ADD TO WISHLIST
    
@@ -155,7 +143,16 @@ function Home() {
                         <div className="add-to-cart-content w-100">
                             <input type="text" value={moreData.count} />
                             <button onClick={() => addtocart(moreData.id)}> Səbətə Əlavə Et</button>
-                            <span className='wish' onClick={() => addToWishlist(moreData.id)} ><i className="fa-solid fa-heart"></i></span>
+                            {
+                                 wish.some( e => e.id === moreData.id ) ?
+                                 <span className='addedtowish' onClick={() => dispatch({type: "DELETEFROMWISH", payload: moreData.id})}>
+                                     <i className="fa-solid fa-heart"></i>
+                                 </span> :
+                                 <span onClick={() => addToWishlist(moreData.id)} >
+                                     <i className="fa-solid fa-heart"></i>
+                                 </span>
+                            }
+                            {/* <span className='wish' onClick={() => addToWishlist(moreData.id)} ><i className="fa-solid fa-heart"></i></span> */}
                         </div>
                     </div>
                 </div>
@@ -256,10 +253,18 @@ function Home() {
                                             <span className='hot'>HOT</span>
                                             <div className="mycard-img-overlay">
                                                 <ul>
+
                                                     <li>
-                                                        <span onClick={() => addToWishlist(index.id)} >
-                                                            <i className="fa-solid fa-heart"></i>
-                                                        </span>
+                                                        {
+                                                             wish.some( e => e.id === index.id ) ?
+                                                             <span className='addedtowish' onClick={() => dispatch({type: "DELETEFROMWISH", payload: index.id})}>
+                                                                 <i className="fa-solid fa-heart"></i>
+                                                             </span> :
+                                                             <span onClick={() => addToWishlist(index.id)} >
+                                                                 <i className="fa-solid fa-heart"></i>
+                                                             </span>
+                                                        }
+                                                        
                                                     </li>
                                                     <li>
                                                         <span className='seemore' onClick={() => readMore(index.id)}>
@@ -299,7 +304,7 @@ function Home() {
                         {
                             saleproducts.length > 0 ?
                                 saleproducts.map((index, key) => (
-                                    <div className="sale-product" key={key} data-aos="zoom-in-up">
+                                    <div className="sale-product" key={key} data-aos="zoom-in-up" >
                                         <img src={index.image} alt="" className='w-100 h-100' />
                                         <span className='sale'> {index.sale}% ENDİRİM </span>
                                         <span className='addtocart' onClick={() => addtocart(index.id)}>Səbətə Göndər</span>

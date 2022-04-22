@@ -103,7 +103,7 @@ function Footer() {
                                 <NavLink to="/profile">Hesabım</NavLink>
                             </li>
                             <li>
-                                <NavLink to="/wishlist">İstək siyahısı</NavLink>
+                                <NavLink to="/profile/wish">İstək siyahısı</NavLink>
                             </li>
                             <li>
                                 <NavLink to="/cart">Səbət</NavLink>

@@ -1,13 +1,16 @@
 import React, { useEffect, useState } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
-import { Link } from 'react-router-dom';
+import { Link, NavLink, useLocation } from 'react-router-dom';
 import { useParams } from 'react-router-dom'
+
 // SWEETALERT
 import swal from 'sweetalert';
 // SWEETALERT
 
 
 function Detail() {
+    let x = useLocation()
+    console.log(x);
     useEffect(() => {
         window.scrollTo(0, 0)
     }, [])
@@ -137,7 +140,8 @@ function Detail() {
                         <div className="menu-page-list-content">
                             {
                                 categories.map((index, key) => (
-                                    <Link to={"/menu/" + index.toLowerCase().replaceAll(' ', '')}><h3 key={key}> {index} </h3></Link>
+                                    <NavLink 
+                                    to={"/menu/" + index.toLowerCase().replaceAll(' ', '')} key={key}><h3 key={key}> {index} </h3></NavLink>
                                 ))
                             }
                         </div>

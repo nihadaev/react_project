@@ -23,10 +23,11 @@ function Contacts() {
 
   const handleSubmit= (e) => {
     e.preventDefault()
-    setAllformdata([...allformdata, formdata])
-    if(allformdata.length>0){
-      dispatch({ type: "SENDUSER", payload: allformdata })
-    }
+    dispatch({ type: "SENDUSER", payload: formdata })
+    // setAllformdata([...allformdata, formdata])
+    // if(allformdata.length>0){
+      
+    // }
    
   }
 

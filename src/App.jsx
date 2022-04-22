@@ -1,4 +1,4 @@
-import React , {useEffect,useState} from "react";
+import React , {useEffect,useLayoutEffect,useState} from "react";
 import { useDispatch, useSelector } from "react-redux";
 import Header from "./components/Header";
 import Home from './pages/Home'
@@ -9,17 +9,21 @@ import Contacts from './pages/Contacts'
 import About from './pages/About'
 import Profile from './pages/Profile'
 import Testimonials from './pages/Testimonials'
-import {Route,Routes} from 'react-router-dom'
+import {Route,Routes, useLocation} from 'react-router-dom'
 import Footer from "./components/Footer";
 import Detail from "./pages/Detail";
+import Kupon from "./pages/Kupon";
+import Blogs from "./pages/Blogs";
 
 
 function App() {
+  const loc = useLocation()
   const [preload,setPreload]= useState(false)
   const dispatch= useDispatch()
   const { products } = useSelector(state => state)
   const {popular} = useSelector (state => state)
   const {saleproducts} = useSelector(state => state)
+  
   useEffect(() => { 
     fetch('https://arcane-oasis-69688.herokuapp.com/products').then(res => res.json())
     .then(data => 
@@ -28,6 +32,7 @@ function App() {
     setPreload(!preload)
 
   }, [])
+
   
   useEffect(() => {
     let pop= []
@@ -106,10 +111,12 @@ function App() {
 
 
         <Route path="/cart" element= {<Cart />} />
-        <Route path="/wishlist" element= { <Wish /> } />
+        <Route path="/profile/wish" element= { <Wish /> } />
+        <Route path="/profile/kupon" element= { <Kupon /> } />
         <Route path="/about" element= {<About />} />
         <Route path="/contacts" element= {<Contacts />} />
         <Route path="/profile" element= {<Profile />} />
+        <Route path="/blogs" element= {<Blogs />} />
         <Route path="/testimonials" element= {<Testimonials />} />
       </Routes>
 
