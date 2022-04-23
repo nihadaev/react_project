@@ -8,14 +8,14 @@ function Cart() {
 }, [])
 
   const {cart} = useSelector(state => state)
-  console.log(cart);
+  
   const dispatch = useDispatch()
 
   const [total,setTotal] = useState([])
 
   // ADD TO CART
   const incCount = (id) => {
-    console.log(id);
+    
         dispatch({ type: "INCCOUNT", payload: id }) 
         dispatch ({type: "TOTAL", payload: id})
 
@@ -37,7 +37,7 @@ const [suremodaldata,setSuremodaldata] = useState({})
     
   }
 
-  console.log(suremodaldata);
+  
   
   
   const deleteItem = (id) =>{

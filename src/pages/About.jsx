@@ -36,7 +36,7 @@ function About() {
   const dispatch = useDispatch()
 
   const { story } = useSelector(state => state)
-  console.log(story.find(e => e.id == 1));
+  
   return (
     <div className='about'>
       <div className="container">
@@ -92,32 +92,38 @@ function About() {
 
       <div className="container">
 
-        <div className="about-content-roaster">
-          <div className="roaster-text" data-aos="fade-right">
-            <h3>Eyni nədir?</h3>
-            <h5>ELANA HƏLƏ BOSSDUR.</h5>
-            <h4>(Baş direktorumuz Elana Rosenfeld də bizi işə saldı.)</h4>
-            <h4>Keçən dəfə biz yoxladıq, Rockies hələ də ön qapının qarşısındadır.</h4>
-            <h4>Həyətdə oynamaq üçün hələ də fasilələr veririk.</h4>
-            <h4>And as always, the beans are nothing but 100% kick-ass.</h4>
-          </div>
-          <div className="roaster-img" data-aos="fade-left">
-            <img src="https://cdn.sanity.io/images/0cvyr85o/us/8fb3517b549f7d28b83ae23a380528163ec68dde-1912x2900.jpg?w=1366&h=2072&auto=format" className='w-100' alt="" />
-          </div>
+        <div className="about-content1">
+          <div className="about-content-roaster">
+            <div className="roaster-text" data-aos="fade-right">
+              <h3>Eyni nədir?</h3>
+              <h5>ELANA HƏLƏ BOSSDUR.</h5>
+              <h4>(Baş direktorumuz Elana Rosenfeld də bizi işə saldı.)</h4>
+              <h4>Keçən dəfə biz yoxladıq, Rockies hələ də ön qapının qarşısındadır.</h4>
+              <h4>Həyətdə oynamaq üçün hələ də fasilələr veririk.</h4>
+              <h4>And as always, the beans are nothing but 100% kick-ass.</h4>
+            </div>
+            <div className="roaster-img" data-aos="fade-left">
+              <img src="https://cdn.sanity.io/images/0cvyr85o/us/8fb3517b549f7d28b83ae23a380528163ec68dde-1912x2900.jpg?w=1366&h=2072&auto=format" className='w-100' alt="" />
+            </div>
 
-          <div className="roaster-img" data-aos="fade-right">
-            <img src="https://cdn.sanity.io/images/0cvyr85o/us/2e5ace280d6a4e0dbf87dad23b8767bdd391e8aa-1912x2900.jpg?w=1366&h=2072&auto=format" className='w-100' alt="" />
-          </div>
 
-          <div className="roaster-text" data-aos="fade-left">
-            <h3>Bu bizim hekayəmizdir.</h3>
-            <h5>İNDİ BU ƏFSANƏDİR.</h5>
-            <h4>Qaya dağının kəşfiyyatçısı at tərəfindən başından təpiklə vuruldu.</h4>
-            <h4>Səyahət yoldaşları onun öldüyünü düşünüb qəbir qazmağa başladılar.</h4>
-            <h4>Amma, vay! Rəvayətə görə, o, bir fincan qəhvə ilə oyandı.</h4>
-            <h4>Bu qarmaqarışıqlığı düzəldə bilmədi.</h4>
+          </div>
+          <div className="about-content-roaster">
+            <div className="roaster-img" data-aos="fade-right">
+              <img src="https://cdn.sanity.io/images/0cvyr85o/us/2e5ace280d6a4e0dbf87dad23b8767bdd391e8aa-1912x2900.jpg?w=1366&h=2072&auto=format" className='w-100' alt="" />
+            </div>
+
+            <div className="roaster-text" data-aos="fade-left">
+              <h3>Bu bizim hekayəmizdir.</h3>
+              <h5>İNDİ BU ƏFSANƏDİR.</h5>
+              <h4>Qaya dağının kəşfiyyatçısı at tərəfindən başından təpiklə vuruldu.</h4>
+              <h4>Səyahət yoldaşları onun öldüyünü düşünüb qəbir qazmağa başladılar.</h4>
+              <h4>Amma, vay! Rəvayətə görə, o, bir fincan qəhvə ilə oyandı.</h4>
+              <h4>Bu qarmaqarışıqlığı düzəldə bilmədi.</h4>
+            </div>
           </div>
         </div>
+
 
         <div className="about-contact">
           <div className="about-contact-img">

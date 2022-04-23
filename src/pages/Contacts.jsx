@@ -6,9 +6,20 @@ import { useSelector } from 'react-redux'
 import { useDispatch } from 'react-redux'
 // USE REDUX
 
+// AOS
+import Aos from 'aos';
+import 'aos/dist/aos.css'
+
+//AOS
 
 function Contacts() {
+    //AOS
 
+  useEffect(() => {
+    Aos.init({duration: 1500})
+  }, [])
+
+  //AOS
   const dispatch = useDispatch()
 
   const {usercontacts} = useSelector(state => state)
@@ -35,7 +46,7 @@ function Contacts() {
     setFormdata({...formdata, [e.target.name] : e.target.value})
   }
 
-  console.log(usercontacts);
+  
 
   return (
 

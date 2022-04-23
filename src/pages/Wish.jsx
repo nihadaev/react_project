@@ -12,7 +12,7 @@ function Wish() {
   const { wish } = useSelector(state => state)
   const { cart } = useSelector(state => state)
   const dispatch = useDispatch()
-  console.log(wish);
+  
 
 
   //ADD TO WISHLIST
@@ -29,7 +29,7 @@ function Wish() {
 
   // ADD TO CART
   const addtocart = (id) => {
-    console.log(id);
+    
     let check = cart.some(e => e.id === id)
     if (check) {
       dispatch({ type: "INCCOUNT", payload: id })

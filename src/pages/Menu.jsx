@@ -32,7 +32,7 @@ function Menu() {
     const dispatch = useDispatch()
     // ADD TO CART
     const addtocart = (id) => {
-        console.log(id);
+        
         let check = cart.some(e => e.id === id)
         if(check) {
             dispatch({ type: "INCCOUNT", payload: id })

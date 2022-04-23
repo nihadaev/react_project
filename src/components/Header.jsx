@@ -18,7 +18,7 @@ function Header() {
      //AOS
 
      useEffect(() => {
-        Aos.init()
+        Aos.init({duration: 1500})
     }, [])
 
     //AOS
@@ -29,19 +29,19 @@ function Header() {
     const dispatch = useDispatch()
     const [headerClassName, setHeaderClassName] = useState('');
 
-    const handleScroll = (headerClassName) => {
-        if (headerClassName !== 'menuscroll' && window.pageYOffset >= 100) {
-            setHeaderClassName('menuscroll');
-        } else if (headerClassName === 'menuscroll' && window.pageYOffset < 100) {
-            setHeaderClassName('');
-        }
+    // const handleScroll = (headerClassName) => {
+    //     if (headerClassName !== 'menuscroll' && window.pageYOffset >= 100) {
+    //         setHeaderClassName('menuscroll');
+    //     } else if (headerClassName === 'menuscroll' && window.pageYOffset < 100) {
+    //         setHeaderClassName('');
+    //     }
 
       
-    }
+    // }
 
-    useEffect(() => {
-        window.onscroll = () => handleScroll(headerClassName);
-    }, [headerClassName]);
+    // useEffect(() => {
+    //     window.onscroll = () => handleScroll(headerClassName);
+    // }, [headerClassName]);
     
     // Search modal
     const [search,setSearch] = useState(false)
@@ -152,7 +152,7 @@ function Header() {
                    
                 </div>
             </div>
-            <div className={"header " + headerClassName }>
+            <div className={"header " }>
 
                 <div className="container ">
                     <div className="header-menu ">

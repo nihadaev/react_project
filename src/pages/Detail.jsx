@@ -10,7 +10,7 @@ import swal from 'sweetalert';
 
 function Detail() {
     let x = useLocation()
-    console.log(x);
+    
     useEffect(() => {
         window.scrollTo(0, 0)
     }, [])
@@ -48,13 +48,13 @@ function Detail() {
 
     }, [category, products])
 
-    console.log(data);
+    
 
     const {cart} = useSelector(state => state)
     const dispatch = useDispatch()
      // ADD TO CART
      const addtocart = (id) => {
-        console.log(id);
+        
         let check = cart.some(e => e.id === id)
         check ?
             dispatch({ type: "INCCOUNT", payload: id }) :
@@ -162,7 +162,7 @@ function Detail() {
                                     // </div>
                                     <div className="products-card" key={key}>
                                             <div className="mycard-img w-100" >
-                                            <img src={index.image} alt="" className='w-100' />
+                                            <img src={index.image} alt="" className='w-100 h-100' />
                                             
                                             <div className="mycard-img-overlay">
                                                 <ul>

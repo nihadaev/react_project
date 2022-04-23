@@ -164,7 +164,7 @@ a.active{
 .searchModal{
   width: 100%;
   height: 100vh;
-  background: rgba(0, 0, 0, 0.616);
+  background: rgba(0, 0, 0, 0.945);
   position: fixed;
   left: 0;
   top: 0;
@@ -1296,10 +1296,10 @@ a.active{
   margin-top: 50px;
 }
 .roaster-text:first-child{
-  margin: 0 !important;
+  margin: 0 ;
 }
 .roaster-img:first-child{
-  margin: 0 !important;
+  margin: 0 ;
 }
 .roaster-text h3{
   font-size: 45px;  
@@ -2182,7 +2182,7 @@ a.active{
     margin-top: 10px;
   }
   .searchModal-cart h2{
-    font-size: 15px;
+    font-size: 12px;
   }
   .searchModal-cart button{
     padding: 8px 12px;
@@ -2211,11 +2211,38 @@ a.active{
     width: 100%;
     margin-top: 25px;
   }
-
+  .popular-products h2{
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  .popular-products h2 span{
+    width: 100%;
+  }
+  .popular-products h2 span:last-child{
+    margin-top: 15px;
+  }
+  .about{
+    padding: 0;
+  }
+  .about-content h2{
+    font-size: 26px;
+  }
+  .about-content-roaster{
+    padding: 20px 0;
+  }
   .about-content .about-content-roaster:nth-child(2){
     flex-wrap: wrap-reverse;
   }
   .about-content .about-content-roaster:nth-child(3){
+    flex-wrap: wrap;
+  }
+  .about-content1 .about-content-roaster:nth-child(1){
+    flex-wrap: wrap-reverse;
+  }
+  .roaster-text{
+    margin-top: 40px !important;
+  }
+  .about-content1 .about-content-roaster:nth-child(2){
     flex-wrap: wrap;
   }
   .roaster-img{
@@ -2231,6 +2258,40 @@ a.active{
   }
   .roaster-text h4{
     font-size: 20px;
+  }
+
+  .about-content-changes{
+    padding: 40px 0;
+  }
+  .changes-text h3{
+    font-size: 25px;
+  }
+  .changes-text h4{
+    font-size: 18px;
+    margin-top: 15px;
+  }
+
+  .about-contact-img{
+    width: 100%;
+  }
+  .about-contact-text{
+    width: 100%;
+    margin-top: 25px;
+  }
+  .about-contact-text h3{
+    font-size: 26px;
+  }
+  .about-contact-text h4{
+    font-size: 18px;
+  }
+  .about-contact-text-buttons{
+    flex-wrap: wrap;
+  }
+  .about-contact-text-buttons a{
+    width: 100%;
+  }
+  .about-contact-text-buttons a:last-child{
+    margin-top: 15px;
   }
 }
 
