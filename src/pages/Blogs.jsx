@@ -1,9 +1,13 @@
-import React from 'react'
+import React, {useEffect} from 'react'
 import {Link} from 'react-router-dom'
 function Blogs() {
+    useEffect(() => {
+        window.scrollTo(0, 0)
+    }, [])
   return (
     <div className='blog-page'>
         <div className="container">
+            <h2>Bloqlarımız</h2>
             <div className="blog-page-content">
                 <div className="blog-card">
                     <div className="blog-card-img">

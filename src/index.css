@@ -1222,6 +1222,7 @@ a.active{
 }
 .myfooter-content-text ul li{
   margin-top: 10px;
+  display: flex;
 }
 .myfooter-content-text ul li i{
   font-size: 15px;
@@ -1533,13 +1534,33 @@ a.active{
   justify-content: center;
   
 }
-.item-count .btn{
+
+.deg-btn{
+  width: 25%;
   height: 50px;
   padding: 7px 13px;
+  background: grey;
+  color: black;
+  cursor: pointer;
+  border: none;
+  font-size: 20px;
+  text-align: center;
 }
+.inc-btn{
+  width: 25%;
+  height: 50px;
+  padding: 7px 13px;
+  background: grey;
+  color: black;
+  cursor: pointer;
+  border: none;
+  font-size: 20px;
+  text-align: center;
+}
+
 .cart-page-products input{
   padding: 7px 13px;
-  width: 50%;
+  width: 30%;
   text-align: center;
   height: 50px;
 }
@@ -1699,6 +1720,7 @@ a.active{
   width: 100%;
   display: flex;
   justify-content: space-between;
+  flex-wrap: wrap;
 }
 .profile-page-list{
   width: 27%;
@@ -1718,6 +1740,9 @@ a.active{
   font-size: 30px;
   color: white;
   transition: .4s;
+}
+.profile-page-list ul li a.active{
+  color: #ca773a;
 }
 .profile-page-list ul li a:hover{
   color: #ca773a;
@@ -1872,6 +1897,64 @@ a.active{
   color: white;
   font-weight: 100;
   margin-top: 20px;
+}
+
+.blog-page h2{
+  width: 100%;
+  text-align: center;
+  font-size: 40px;
+  color: white;
+}
+
+.detailedblog-page{
+  width: 100%;
+  background: black;
+  padding: 70px 0;
+}
+.detailedblog-page h2{
+  font-size: 40px;
+  color: white;
+  text-align: center;
+}
+.detailedblog-content{
+  width: 100%;
+  padding: 40px 0;
+}
+.detailedblog-content h4{
+  font-size: 16px;
+  margin-top: 30px;
+  color: gray;
+}
+.detailedblog-content h3{
+  font-size: 40px;
+  color: white;
+  margin-top: 30px;
+  font-weight: bold;
+}
+.marx{
+  font-size: 16px;
+  color: white;
+  margin-top: 10px !important;
+}
+.detailedblog-content p{
+  font-size: 19px;
+  color: white;
+  margin-top: 30px;
+}
+.detailedblog-section{
+  width: 100%;
+  padding: 30px 0;
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  align-items: center;
+}
+.detailedblog-section-img{
+  width: 47%;
+}
+.detailedblog-section-text{
+  width: 47%;
+
 }
 /* MOBILE */
 
@@ -2096,6 +2179,7 @@ a.active{
     padding: 50px 0;
     display: flex;
     justify-content: space-between;
+    flex-wrap: wrap;
   }
   .story-content-text p{
     width: 69%;
@@ -2292,6 +2376,126 @@ a.active{
   }
   .about-contact-text-buttons a:last-child{
     margin-top: 15px;
+  }
+
+  .profile-page{
+    padding: 20px 0;
+  }
+  .profile-page-list{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+  }
+  .profile-page-list-content{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+  }
+  .profile-page-list ul {
+    display: flex;
+    max-width: 90%;
+    overflow-x: scroll;
+    padding: 30px 0;
+  }
+  .profile-page-list ul li:first-child{
+    margin-left: 0 !important;
+  }
+  .profile-page-list ul li{
+    white-space: nowrap;
+    margin-top: 25px !important;
+    margin-left: 30px !important;
+  }
+  .profile-page-list ul li a{
+    font-size: 16px;
+  }
+  .profile-page-info{
+    width: 100%;
+    padding: 50px 0; 
+  }
+
+  .wish-page{
+    padding: 20px 0;
+  }
+  .wish-page-info{
+    width: 100%;
+    justify-content: center;
+    margin-top: 30px;
+  }
+  .wish-page-info h2{
+    font-size: 26px;
+  }
+  .wish-page-info .products-card{
+    width: 80%;
+  }
+  .kupon-page{
+    padding: 20px 0;
+  }
+  .kupon-content{
+    width: 100%;
+  }
+  .kupon-card{
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+  }
+  .kupon-card-img{
+    width: 100%;
+  }
+  .kupon-card-img img{
+    object-fit: cover;
+  }
+  .kupon-card-text{
+    width: 100%;
+  }
+  .kupon-card-text h3{
+    font-size: 18px;
+  }
+  .kupon-card span{
+    font-size: 19px;
+  }
+
+  .cart-page-products h4{
+    font-size: 12px;
+  }
+  .cart-page-products-img h4{
+    font-size: 12px;
+  }
+
+  .deg-btn{
+    width: 30px;
+    height: 40px;
+    padding: 3px 8px;
+    background: grey;
+    color: black;
+    cursor: pointer;
+    border: none;
+    font-size: 20px;
+    text-align: center;
+  }
+  .inc-btn{
+    height: 40px;
+    padding: 3px 8px;
+    background: grey;
+    color: black;
+    cursor: pointer;
+    border: none;
+    font-size: 20px;
+    text-align: center;
+    width: 30px;
+  }
+  
+  .cart-page-products input{
+    padding: 3px 8px;
+    width: 40px;
+    text-align: center;
+    height: 40px;
+  }
+  .cart-page{
+    padding: 40px 0;
+  }
+
+  .blog-card{
+    width: 100%;
   }
 }
 
@@ -2502,5 +2706,17 @@ a.active{
     color: white;
     font-weight: 400;
     margin-top: 25px;
+  }
+
+  .cart-page-content-info{
+    width: 100%;
+  }
+  .cart-page-content-pay{
+    margin-top: 25px;
+    width: 100%;
+  }
+
+  .blog-card{
+    width: 48%;
   }
 }

@@ -4,7 +4,7 @@ import { NavLink } from 'react-router-dom'
 // USE REDUX
 import { useSelector } from 'react-redux'
 import { useDispatch } from 'react-redux'
-// USE REDUX
+// тUSE REDUX
 
 // SWEETALERT
 import swal from 'sweetalert';
@@ -70,7 +70,7 @@ function Footer() {
                         <h2>Kontaktlarımız</h2>
                         <ul>
                             <li>
-                                <span><i className="fa-solid fa-location-dot"></i></span> <span> Caspian Business Center, 42 J. Jabbarli, Baku</span>
+                                <span><i className="fa-solid fa-location-dot"></i></span> <span> Caspian Business Center, <br /> 42 J. Jabbarli, Baku</span>
                             </li>
                             <li>
                                 <span><i className="fa-solid fa-phone"></i></span> <span>+994-51-624-22-19</span>
@@ -100,7 +100,7 @@ function Footer() {
                         <h2>Akkaunt</h2>
                         <ul>
                             <li>
-                                <NavLink to="/profile">Hesabım</NavLink>
+                                <NavLink to="/profile/detailedprofile">Hesabım</NavLink>
                             </li>
                             <li>
                                 <NavLink to="/profile/wish">İstək siyahısı</NavLink>

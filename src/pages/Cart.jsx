@@ -107,11 +107,11 @@ const [suremodaldata,setSuremodaldata] = useState({})
                         <li><h4 className='item-price'> ₼ {index.price} </h4></li>
 
                         <li className='item-count' >
-                          <button className="btn btn-danger" onClick={() => degCount(index.id)}>
+                          <button className="deg-btn" onClick={() => degCount(index.id)}>
                             -
                           </button>
                         <input type="text" value={index.count} />
-                        <button className="btn btn-success" onClick={() => incCount(index.id)}>
+                        <button className="inc-btn " onClick={() => incCount(index.id)}>
                           +
                         </button>
                       </li>

@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react'
 import { NavLink } from 'react-router-dom'
-import logo from '../images/logoo.svg'
+import logo from '../images/logoo.png'
 import card from '../images/card.png'
 
 import { useSelector } from 'react-redux'
@@ -122,13 +122,13 @@ function Header() {
                             <NavLink to="/contacts">Kontaktlarımız</NavLink>
                         </li>
                         <li>
-                            <NavLink to="/location">Franşız</NavLink>
+                            <NavLink to="/blogs">Bloqlar</NavLink>
                         </li>
                     </ul>
 
                     <ul>
                         <li>
-                            <NavLink to="/menu">Menü :</NavLink>
+                            <NavLink to="/menu">Menu :</NavLink>
                         </li>
                     </ul>
 
@@ -163,8 +163,8 @@ function Header() {
 
                         <div className="header-list h-100">
                             <ul>
-                                <li data-aos="fade-down"  data-aos-delay="150"><NavLink to="/">Ana səhifə</NavLink></li>
-                                <li data-aos="fade-down"  data-aos-delay="250" className="menu"><NavLink to="/menu" className="menu1" >Menü
+                                <li ><NavLink to="/">Ana səhifə</NavLink></li>
+                                <li  className="menu"><NavLink to="/menu" className="menu1" >Menu
 
                                 </NavLink>
                                     <div className="menuoverlay">
@@ -187,9 +187,9 @@ function Header() {
                                         </ul>
                                     </div>
                                 </li>
-                                <li data-aos="fade-down"  data-aos-delay="300"><NavLink to="/about">Haqqımızda</NavLink></li>
-                                <li data-aos="fade-down"  data-aos-delay="350"><NavLink to="/blogs">Bloqlar</NavLink></li>
-                                <li data-aos="fade-down"  data-aos-delay="400"><NavLink to="/contacts">Kontaktlarımız</NavLink></li>
+                                <li   ><NavLink to="/about">Haqqımızda</NavLink></li>
+                                <li ><NavLink to="/blogs">Bloqlar</NavLink></li>
+                                <li ><NavLink to="/contacts">Kontaktlarımız</NavLink></li>
                             </ul>
                         </div>
 
@@ -210,7 +210,7 @@ function Header() {
                                     <img src={card} alt=""  />
                                     <span className='cartcount'> {cart.length} </span>
                                 </NavLink></li>
-                                <li> <NavLink to="/profile"><i className="fa-regular fa-user"></i></NavLink> </li>
+                                <li> <NavLink to="/profile/detailedprofile"><i className="fa-regular fa-user"></i></NavLink> </li>
                             </ul>
                         </div>
 

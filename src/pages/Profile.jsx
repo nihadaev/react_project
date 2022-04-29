@@ -1,5 +1,5 @@
 import React, { useEffect } from 'react'
-import { Link } from 'react-router-dom'
+import { NavLink, NavNavLink } from 'react-router-dom'
 
 
 function Profile() {
@@ -15,16 +15,16 @@ function Profile() {
             <div className="profile-page-list-content">
               <ul>
                 <li>
-                  <Link to='/profile'>Şəxsi Məlumat</Link>
+                  <NavLink to='/profile/detailedprofile'>Şəxsi Məlumat</NavLink>
                 </li>
                 <li>
-                  <Link to='/profile/wish'>İstək Siyahısı</Link>
+                  <NavLink to='/profile/wish'>İstək Siyahısı</NavLink>
                 </li>
                 <li>
-                  <Link to='/profile/kupon'>Kuponlar</Link>
+                  <NavLink to='/profile/kupon'>Kuponlar</NavLink>
                 </li>
                 <li>
-                  <Link to='/profile/orders'>Zakazlarım</Link>
+                  <NavLink to='/profile/orders'>Zakazlarım</NavLink>
                 </li>
               </ul>
             </div>

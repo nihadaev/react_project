@@ -8,12 +8,13 @@ import Wish from './pages/Wish'
 import Contacts from './pages/Contacts'
 import About from './pages/About'
 import Profile from './pages/Profile'
-import Testimonials from './pages/Testimonials'
+import Testimonials from './pages/Detailedblog'
 import {Route,Routes, useLocation} from 'react-router-dom'
 import Footer from "./components/Footer";
 import Detail from "./pages/Detail";
 import Kupon from "./pages/Kupon";
 import Blogs from "./pages/Blogs";
+import Detailedblog from "./pages/Detailedblog";
 
 
 function App() {
@@ -60,13 +61,7 @@ function App() {
   console.log(saleproducts);
   
   
-  useEffect(() => {
-    fetch('http://localhost:7000/story').then(res => res.json())
-    .then(data => 
-      dispatch({type: "STORY", payload: data})
-      )
-      
-  }, [])
+
 
   const [showButton, setShowButton] = useState(false);
 
@@ -115,9 +110,10 @@ function App() {
         <Route path="/profile/kupon" element= { <Kupon /> } />
         <Route path="/about" element= {<About />} />
         <Route path="/contacts" element= {<Contacts />} />
-        <Route path="/profile" element= {<Profile />} />
+        <Route path="/profile/detailedprofile" element= {<Profile />} />
         <Route path="/blogs" element= {<Blogs />} />
-        <Route path="/testimonials" element= {<Testimonials />} />
+        <Route path="/blogs/detailed" element= {<Detailedblog />} />
+        
       </Routes>
 
       <Footer />

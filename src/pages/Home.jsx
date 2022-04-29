@@ -54,7 +54,7 @@ function Home() {
     //STORY
     
     //WISHLIST
-    const { wish } = useSelector(state => state)
+    const { wish, usercontacts } = useSelector(state => state)
     //WISHLIST
 
     const state = useSelector(state => state)
@@ -104,7 +104,7 @@ function Home() {
     
   }, [])
 
-  
+  console.log(usercontacts);
   
       
     return (
@@ -481,8 +481,8 @@ function Home() {
                 <div className="container">
                     <div className="story-content">
                         <div className="story-content-text" data-aos="fade-right">
-                            <p className='w-100'>Founded in April 2017 by two young man from Yogyakarta, Couvee comes from an idea that everyone can enjoy coffee. It’s
-                                all started at a small rented building on Jalan Kaliurang. By 2019, Couvee has 5 branches, one of them located in Jakarta.</p>
+                            <p className='w-100'>2017-ci ilin aprelində Yogyakartadan olan iki gənc tərəfindən qurulan Couvee, hər kəsin qəhvədən həzz ala biləcəyi ideyasından irəli gəlir. odur
+                                hər şey Jalan Kaliurangdakı kiçik kirayə binada başladı. 2019-cu ilə qədər Couvee-nin 5 filialı var, onlardan biri Cakartada yerləşir.</p>
 
                             <div className="link-to-story w-100">
                                 <NavLink to="/about">
