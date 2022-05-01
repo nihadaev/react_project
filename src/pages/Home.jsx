@@ -187,7 +187,7 @@ function Home() {
                             <div className="different-pages-menu">
                                 <div className="different-pages-content">
                                     <h2>Bizim Menümuz</h2>
-                                    <NavLink to="/menu">Ətraflı</NavLink>
+                                    <NavLink to="/react_project/menu">Ətraflı</NavLink>
                                 </div>
                             </div>
                         
@@ -210,7 +210,7 @@ function Home() {
             <div className="popular-products">
                 <div className="container">
 
-                    <h2> <span>Çox Satılanlar</span> <span><NavLink to="/menu">Bütün Məhsullar</NavLink></span></h2>
+                    <h2> <span>Çox Satılanlar</span> <span><NavLink to="/react_project/menu">Bütün Məhsullar</NavLink></span></h2>
 
                     <Swiper
                         slidesPerView={1}
@@ -494,7 +494,7 @@ function Home() {
                                 hər şey Jalan Kaliurangdakı kiçik kirayə binada başladı. 2019-cu ilə qədər Couvee-nin 5 filialı var, onlardan biri Cakartada yerləşir.</p>
 
                             <div className="link-to-story w-100">
-                                <NavLink to="/about">
+                                <NavLink to="/react_project/about">
                                     Ətraflı
                                 </NavLink>
                             </div>

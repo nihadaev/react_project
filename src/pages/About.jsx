@@ -134,8 +134,8 @@ function About() {
             <h3>Indi...</h3>
             <h4>Gəlin qəhvə içək</h4>
             <div className="about-contact-text-buttons">
-              <Link to='/menu'>Menu</Link>
-              <Link to='/contacts'>Əlaqə</Link>
+              <Link to='/react_project/menu'>Menu</Link>
+              <Link to='/react_project/contacts'>Əlaqə</Link>
             </div>
           </div>
         </div>
