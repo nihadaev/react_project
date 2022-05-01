@@ -109,6 +109,7 @@ function Menu() {
             </div>
 
             <div className="container">
+                <h2>Menu</h2>
                 <div className="menu-page-content">
                     <div className="menu-page-list">
                         <div className="menu-page-list-content">
@@ -123,16 +124,7 @@ function Menu() {
                         <div className="menu-page-products-content">
                             {
                                 products.map((index, key) => (
-                                    // <div className="products-card" key={key}>
-                                    //     <div className="products-card-image">
-                                    //         <img src={index.image} alt="" />
-                                    //     </div>
-                                    //     <div className="products-card-content">
-                                    //         <p> <i className="fa-solid fa-star"></i> {index.rating} </p>
-                                    //         <h3> {index.title} </h3>
-                                    //         <p> {index.price} ₼ </p>
-                                    //     </div>
-                                    // </div>
+                                    
                                     <div className="products-card" key={key}>
                                         <div className="mycard-img w-100" >
                                             <img src={index.image} alt="" className='w-100  h-100' />

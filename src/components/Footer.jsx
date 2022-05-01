@@ -85,13 +85,16 @@ function Footer() {
                         <h2>Məlumat</h2>
                         <ul>
                             <li>
-                                <NavLink to="/about">Haqqımızda</NavLink>
+                                <NavLink to="/react_project/about">Haqqımızda</NavLink>
                             </li>
                             <li>
-                                <NavLink to="/contacts">Kontaktlarımız</NavLink>
+                                <NavLink to="/react_project/contacts">Kontaktlarımız</NavLink>
                             </li>
                             <li>
-                                <NavLink to="/menu">Menü</NavLink>
+                                <NavLink to="/react_project/menu">Menu</NavLink>
+                            </li>
+                            <li>
+                            <NavLink to="/react_project/blogs" >Bloqlar</NavLink>
                             </li>
                         </ul>
                     </div>
@@ -100,13 +103,16 @@ function Footer() {
                         <h2>Akkaunt</h2>
                         <ul>
                             <li>
-                                <NavLink to="/profile/detailedprofile">Hesabım</NavLink>
+                                <NavLink to="/react_project/profile/detailedprofile">Hesabım</NavLink>
                             </li>
                             <li>
-                                <NavLink to="/profile/wish">İstək siyahısı</NavLink>
+                                <NavLink to="/react_project/profile/wish">İstək siyahısı</NavLink>
                             </li>
                             <li>
-                                <NavLink to="/cart">Səbət</NavLink>
+                                <NavLink to="/react_project/cart">Səbət</NavLink>
+                            </li>
+                            <li>
+                                <NavLink to='/react_project/profile/kupon'>Kuponlar</NavLink>
                             </li>
                         </ul>
                     </div>

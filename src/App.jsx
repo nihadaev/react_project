@@ -15,6 +15,7 @@ import Detail from "./pages/Detail";
 import Kupon from "./pages/Kupon";
 import Blogs from "./pages/Blogs";
 import Detailedblog from "./pages/Detailedblog";
+import Load from './images/loading.gif'
 
 
 function App() {
@@ -26,11 +27,14 @@ function App() {
   const {saleproducts} = useSelector(state => state)
   
   useEffect(() => { 
+    setTimeout(() => {
+      setPreload(!preload)
     fetch('https://arcane-oasis-69688.herokuapp.com/products').then(res => res.json())
     .then(data => 
       dispatch({type: "ALL_DATA", payload: data})
     )
     setPreload(!preload)
+    }, 2000);
 
   }, [])
 
@@ -42,9 +46,6 @@ function App() {
       
       if(e.popular == "popular"){
         pop.push(e)
-          // setPop(state => [...state,e])
-         // console.log(e); 
-         //console.log(popular);
       } else if(e.popular == "sale"){
         sale.push(e)
       }
@@ -92,27 +93,27 @@ function App() {
       )}
 
       <div className={preload ? 'preload aktivated' : 'preload '}>
-        <img src="https://acegif.com/wp-content/gifs/coffee-34.gif" alt="" className="w-100 h-100" />
+        <img src={Load} alt=""  />
       </div>
 
       <Header />
 
-      <Routes>
-        <Route path="/" element={<Home />} />
+      <Routes >
+        <Route path="/react_project/" element={<Home />} />
 
-        <Route path="/menu" element= {<Menu />} />
-        <Route path="/menu/:category" element= {<Detail />} />
+        <Route path="/react_project/menu" element= {<Menu />} />
+        <Route path="/react_project/menu/:category" element= {<Detail />} />
 
 
 
-        <Route path="/cart" element= {<Cart />} />
-        <Route path="/profile/wish" element= { <Wish /> } />
-        <Route path="/profile/kupon" element= { <Kupon /> } />
-        <Route path="/about" element= {<About />} />
-        <Route path="/contacts" element= {<Contacts />} />
-        <Route path="/profile/detailedprofile" element= {<Profile />} />
-        <Route path="/blogs" element= {<Blogs />} />
-        <Route path="/blogs/detailed" element= {<Detailedblog />} />
+        <Route path="/react_project/cart" element= {<Cart />} />
+        <Route path="/react_project/profile/wish" element= { <Wish /> } />
+        <Route path="/react_project/profile/kupon" element= { <Kupon /> } />
+        <Route path="/react_project/about" element= {<About />} />
+        <Route path="/react_project/contacts" element= {<Contacts />} />
+        <Route path="/react_project/profile/detailedprofile" element= {<Profile />} />
+        <Route path="/react_project/blogs" element= {<Blogs />} />
+        <Route path="/react_project/blogs/detailed" element= {<Detailedblog />} />
         
       </Routes>
 

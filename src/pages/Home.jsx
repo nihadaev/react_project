@@ -330,21 +330,30 @@ function Home() {
                         <div className="action-1">
                             <img src="https://sun9-88.userapi.com/impg/doK3wZCuGh6hKvKCRz51M_YQiCY1zvXSfe3pOw/l1dxNJnDMdY.jpg?size=564x698&quality=95&sign=90081e8b0857b462e78a1e1bb53569e5&type=album" alt="" className='w-100 h-100' />
                             <div className="action-1-content">
-                                <span data-aos="fade-down">1+1 Aksiyası</span>
+                                <span data-aos="fade-down" data-aos-duration="1000">1+1 Aksiyası</span>
                             </div>
                         </div>
                         <div className="action-2">
                             <div className="action-4">
+                               <div className="action-1-content">
+                               <span data-aos="fade-down" data-aos-duration="1000">Ad günündə bütün məhsullar pulsuz </span>
+                               </div>
                                 <img src="https://images.wallpaperscraft.ru/image/single/kofe_kniga_ochki_140830_1920x1080.jpg" alt="" className='w-100 h-100' />
                             </div>
                             <div className="action-5">
                                 <img src="https://sun9-35.userapi.com/impg/Rq9mC_vuOBMroBvNAyNHN-y7Kf53wd1twPIUpQ/jpvBSRdGkjo.jpg?size=735x1062&quality=95&sign=1f4f88fc35d275b51131535a7b98e579&type=album" alt="" className='w-100 h-100' />
                             </div>
                             <div className="action-6">
+                            <div className="action-1-content">
+                                <span data-aos="fade-down" data-aos-duration="1000">1+1 Aksiyası</span>
+                            </div>
                                 <img src="https://sun9-81.userapi.com/impg/Z2gq2J1lzyO7BIO5xQBkjo0vV7IR-RjVzYgC-Q/HDjSqfUVfYs.jpg?size=607x759&quality=95&sign=f009ab55f25dd071354d9e95fae8ddc0&type=album" alt="" className='w-100 h-100' />
                             </div>
                         </div>
                         <div className="action-3">
+                        <div className="action-1-content">
+                                <span data-aos="fade-down" data-aos-duration="1000"> 1+1 Aksiyası</span>
+                            </div>
                             <img src="https://sun9-1.userapi.com/impg/4vaAVjOnOBe7xPuRagjA327qaEGqpIpRlLdm8w/N9OnbDmnJoY.jpg?size=720x1080&quality=95&sign=2e7c5430401cfd99b16515acf3e1941d&type=album" alt="" className='w-100 h-100' />
                         </div>
                     </div>

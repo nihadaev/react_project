@@ -67,20 +67,8 @@ function Detail() {
 
     const {wish} = useSelector(state => state)
     //ADD TO WISHLIST
-    const addToWishlist = (id) =>{
-        let check = wish.some(e => e.id ===id)
-        check ? 
-        swal({
-            title: "Əlavə olunub!",
-            icon: "error",
-          })
-        :
-        dispatch({type: "WISH", payload: id})
-        swal({
-            title: "Əlavə olundu!",
-            icon: "success",
-          })
-          
+    const addToWishlist = (id) => {   
+        dispatch({ type: "WISH", payload: id })
     }
    // ADD TO WISHLIST
 
@@ -101,6 +89,7 @@ function Detail() {
    // SET DATA FOR MODAL
     return (
         <div className='menu-page'>
+            <h2>Menu</h2>
              <div className={mymodal ? 'mymodal opened' : 'mymodal'}>
                 <div className="mymodal-content">
 
@@ -150,16 +139,7 @@ function Detail() {
                         { <div className="menu-page-products-content">
                             {
                                 data.map((index, key) => (
-                                    // <div className="products-card" key={key}>
-                                    //     <div className="products-card-image">
-                                    //         <img src={index.image} alt="" className='w-100' />
-                                    //     </div>
-                                    //     <div className="products-card-content">
-                                    //         <p> <i className="fa-solid fa-star"></i> {index.rating} </p>
-                                    //         <h3> {index.title} </h3>
-                                    //         <p> {index.price} ₼ </p>
-                                    //     </div>
-                                    // </div>
+                                   
                                     <div className="products-card" key={key}>
                                             <div className="mycard-img w-100" >
                                             <img src={index.image} alt="" className='w-100 h-100' />
@@ -167,9 +147,15 @@ function Detail() {
                                             <div className="mycard-img-overlay">
                                                 <ul>
                                                     <li>
-                                                        <span onClick={() => addToWishlist(index.id)} >
-                                                            <i className="fa-solid fa-heart"></i>
-                                                        </span>
+                                                    {
+                                                            wish.some( e => e.id === index.id ) ?
+                                                            <span className='addedtowish' onClick={() => dispatch({type: "DELETEFROMWISH", payload: index.id})}>
+                                                                <i className="fa-solid fa-heart"></i>
+                                                            </span> :
+                                                            <span onClick={() => addToWishlist(index.id)} >
+                                                                <i className="fa-solid fa-heart"></i>
+                                                            </span>
+                                                        }
                                                     </li>
                                                     <li>
                                                         <span className='seemore' onClick={() => readMore(index.id)}>

@@ -15,16 +15,16 @@ function Profile() {
             <div className="profile-page-list-content">
               <ul>
                 <li>
-                  <NavLink to='/profile/detailedprofile'>Şəxsi Məlumat</NavLink>
+                  <NavLink to='/react_project/profile/detailedprofile'>Şəxsi Məlumat</NavLink>
                 </li>
                 <li>
-                  <NavLink to='/profile/wish'>İstək Siyahısı</NavLink>
+                  <NavLink to='/react_project/profile/wish'>İstək Siyahısı</NavLink>
                 </li>
                 <li>
-                  <NavLink to='/profile/kupon'>Kuponlar</NavLink>
+                  <NavLink to='/react_project/profile/kupon'>Kuponlar</NavLink>
                 </li>
                 <li>
-                  <NavLink to='/profile/orders'>Zakazlarım</NavLink>
+                  <NavLink to='/react_project/profile/orders'>Zakazlarım</NavLink>
                 </li>
               </ul>
             </div>
