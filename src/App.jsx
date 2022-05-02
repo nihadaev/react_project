@@ -102,7 +102,7 @@ function App() {
         <Route path="/react_project/" element={<Home />} />
 
         <Route path="/react_project/menu" element= {<Menu />} />
-        <Route path="/react_project/menu/:category" element= {<Detail />} />
+        <Route path="/menu/:category" element= {<Detail />} />
 
 
 

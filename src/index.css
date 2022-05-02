@@ -1493,6 +1493,8 @@ a.active{
 .cart-page-content-pay{
   width: 28%;
   height: 300px;
+  position: sticky;
+  top: 30%;
 }
 .cart-page-list{
   width: 100%;
