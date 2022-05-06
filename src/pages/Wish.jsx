@@ -60,8 +60,8 @@ function Wish() {
   // SET DATA FOR MODAL
   return (
     <div className='wish-page'>
-      <div className={mymodal ? 'mymodal opened' : 'mymodal'}>
-        <div className="mymodal-content">
+      <div className={mymodal ? 'mymodal opened' : 'mymodal'} onClick={() => setMymodal(!mymodal)}>
+        <div className="mymodal-content" onClick={e => e.stopPropagation()}>
 
           <div className="close-content" onClick={() => setMymodal(!mymodal)}>
             <div className="line">

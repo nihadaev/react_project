@@ -135,19 +135,19 @@ function Header() {
 
                     <ul className='mobile-menu-list'>
                         <li>
-                            <NavLink to="/react_project/menu/hotdrink" onClick={() => setMenu(!menu)}>İsti İçkilər</NavLink>
+                            <NavLink to="menu/hotdrink" onClick={() => setMenu(!menu)}>İsti İçkilər</NavLink>
                         </li>
                         <li>
-                            <NavLink to="/react_project/menu/freshdrink" onClick={() => setMenu(!menu)}>Sərin içkilər</NavLink>
+                            <NavLink to="menu/freshdrink" onClick={() => setMenu(!menu)}>Sərin içkilər</NavLink>
                         </li>
                         <li>
-                            <NavLink to="/react_project/menu/deserts" onClick={() => setMenu(!menu)}>Desertlər</NavLink>
+                            <NavLink to="menu/deserts" onClick={() => setMenu(!menu)}>Desertlər</NavLink>
                         </li>
                         <li>
-                            <NavLink to="/react_project/menu/salads" onClick={() => setMenu(!menu)}>Salatlar</NavLink>
+                            <NavLink to="menu/salads" onClick={() => setMenu(!menu)}>Salatlar</NavLink>
                         </li>
                         <li>
-                            <NavLink to="/react_project/menu/burgers" onClick={() => setMenu(!menu)}>Burgerlər</NavLink>
+                            <NavLink to="menu/burgers" onClick={() => setMenu(!menu)}>Burgerlər</NavLink>
                         </li>
                     </ul>
 
@@ -176,19 +176,19 @@ function Header() {
                                     <div className="menuoverlay">
                                         <ul>
                                             <li >
-                                                <NavLink to="/react_project/menu/hotdrink">İsti İçkilər</NavLink>
+                                                <NavLink to="/menu/hotdrink">İsti İçkilər</NavLink>
                                             </li>
                                             <li >
-                                                <NavLink to="/react_project/menu/deserts">Desertlər</NavLink>
+                                                <NavLink to="/menu/deserts">Desertlər</NavLink>
                                             </li>
                                             <li >
-                                                <NavLink to="/react_project/menu/burgers">Burgerlər</NavLink>
+                                                <NavLink to="/menu/burgers">Burgerlər</NavLink>
                                             </li>
                                             <li >
-                                                <NavLink to="/react_project/menu/salads">Salatlar</NavLink>
+                                                <NavLink to="/menu/salads">Salatlar</NavLink>
                                             </li>
                                             <li >
-                                                <NavLink to="/react_project/menu/freshdrink">Sərin İçkilər</NavLink>
+                                                <NavLink to="/menu/freshdrink">Sərin İçkilər</NavLink>
                                             </li>
                                         </ul>
                                     </div>

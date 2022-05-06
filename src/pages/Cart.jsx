@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
+import { useForm } from 'react-hook-form'
 
 
 function Cart() {
@@ -21,8 +22,8 @@ function Cart() {
 
   }
 
-  const [paymodal,setPaymodal] = useState(false)
-  
+  const [paymodal, setPaymodal] = useState(false)
+
 
   const [suremodal, setSuremodal] = useState(false)
   const [suremodaldata, setSuremodaldata] = useState({})
@@ -56,20 +57,115 @@ function Cart() {
     cart.length > 0 ?
       cart.map(e => {
         totalamount += e.total
-        setTotal( Math.ceil(totalamount *100)/100 )
+        setTotal(Math.ceil(totalamount * 100) / 100)
       })
       : setTotal(0)
   }, [cart])
 
-const paycart = () => {
-  if(cart.length>0){
-    setPaymodal(!paymodal)
+  const paycart = () => {
+    if (cart.length > 0) {
+      setPaymodal(!paymodal)
+    }
   }
-}
+
+  const {
+    register,
+    formState: {
+      errors
+    },
+    reset,
+    handleSubmit
+  } = useForm({
+    mode: 'onBlur'
+  })
 
 
+  const onSubmit = () => {
+    setPaymodal(!paymodal)
+    reset()
+  }
   return (
     <div className='cart-page'>
+
+
+      <div className={paymodal ? 'pay-modal applied' : 'pay-modal'} onClick={() => setPaymodal(!paymodal)}>
+
+        <div className="pay-modal-content" onClick={e => e.stopPropagation()}>
+          <span className='closepaymodal' onClick={() => setPaymodal(!paymodal)}>
+            X
+          </span>
+
+          <form className='payform' onSubmit={handleSubmit(onSubmit)}>
+            <label className='cardnumber'>
+              Kartın Nömrəsi
+            </label>
+            <input
+              {...register('cardnumber', {
+                required: true,
+                minLength: {
+                  value: 16,
+                  message: 'Card nömrəsi 16 rəqəmnən ibarətdi'
+                },
+                maxLength: 16
+              })}
+              maxLength={16}
+              className='cardnumber1' placeholder='XXXX-XXXX-XXXX-XXXX' />
+            <div className="error">
+              {errors?.cardnumber && <p> {errors?.cardnumber?.message || 'Məlumat yanlışdı'}</p>}
+            </div>
+            <div className="datecvv">
+              <div className="date">
+                <label>
+                  Müddətin bitmə tarixi
+                </label>
+                <input 
+                {...register('date', {
+                  required: true,
+                  minLength: {
+                    value: 4,
+                    message: 'Müddət  səhvdi'
+                  },
+                  maxLength: 4,
+                })}
+                maxLength={4}
+                placeholder='MM/YY' />
+                <div className="error">
+                  {errors?.date && <p> {errors?.date?.message || 'Məlumat yanlışdı'}</p>}
+                </div>
+
+              </div>
+              <div className="cvv">
+                <label>
+                  Təhlükəsizlik kodu
+                </label>
+                <input
+                  {...register('cvv', {
+                    required: true,
+                    minLength: {
+                      value: 3,
+                      message: 'Təhlukəsizlik kodu səhvdi'
+                    },
+                    maxLength: 3
+                  })}
+                  maxLength={3}
+                  placeholder='CVV' />
+                <div className="error">
+                  {errors?.cvv && <p> {errors?.cvv?.message || 'Məlumat yanlışdı'}</p>}
+                </div>
+              </div>
+            </div>
+
+            <div className="pay-button">
+
+              <button className="btn btn-success">
+                Ödə
+              </button>
+            </div>
+          </form>
+        </div>
+
+      </div>
+
       <div className={suremodal ? 'sure-modal show' : 'sure-modal'}>
         <div className="sure-modal-content">
           <span className='closesuremodal' onClick={() => setSuremodal(!suremodal)}>X</span>
@@ -80,44 +176,6 @@ const paycart = () => {
           </div>
         </div>
       </div>
-
-      <div className={paymodal? 'pay-modal applied' : 'pay-modal'}>
-
-        <div className="pay-modal-content">
-          <span className='closepaymodal' onClick={() => setPaymodal(!paymodal)}>
-            X
-          </span> 
-          <form className='payform'>
-            <label className='cardnumber'>
-              Kartın Nömrəsi
-            </label>
-            <input type="text" className='cardnumber1' placeholder='XXXX-XXXX-XXXX-XXXX' />
-            <div className="datecvv">
-              <div className="date">
-                <label>
-                  Müddətin bitmə tarixi
-                </label>
-                <input type="text" placeholder='MM/YY'/>
-              </div>
-              <div className="cvv">
-                <label>
-                  Təhlükəsizlik kodu
-                </label>
-                <input type="text" placeholder='CVV'/>
-              </div>
-            </div>
-
-            <div className="pay-button">
-              
-              <button className="btn btn-success">
-                Ödə
-              </button>
-            </div>
-          </form>
-        </div>
-
-      </div>
-
       <div className="container">
         <h2>Səbət</h2>
 
@@ -163,7 +221,7 @@ const paycart = () => {
                   </li>
 
                   <li className='trashtotal'>
-                    <h4> ₼ {Math.ceil(index.total*100)/100} </h4>
+                    <h4> ₼ {Math.ceil(index.total * 100) / 100} </h4>
                     <i className="fa-solid fa-trash-can trash" onClick={() => deleteItem(index.id)}></i>
                   </li>
                 </ul>

@@ -1658,7 +1658,7 @@ a.active{
 }
 .pay-modal-content{
   width: 500px;
-  height: 300px;
+  height: auto;
   background: #232125;
   position: relative;
   padding: 30px;
@@ -1679,10 +1679,15 @@ a.active{
 .payform input{
   padding: 8px 15px;
 }
-.straw{
-  height: 500px;
-  object-fit: cover;
+.error{
+  margin-top: 15px;
+  width: 100%;
 }
+.error p{
+  color: red;
+  font-size: 15px;
+}
+
 .cardnumber{
   font-size: 15px;
   color: white;
@@ -1738,7 +1743,10 @@ a.active{
   display: flex;
   justify-content: center;
 }
-
+.straw{
+  height: 500px;
+  object-fit: cover;
+}
 .contact-page{
   width: 100%;
   padding: 70px 0;
@@ -2046,6 +2054,7 @@ a.active{
   height: 70vh;
   display: flex;
   align-items: center;
+  background-size: cover;
 }
 .blog-page-background h2{
   text-transform: uppercase;
@@ -2056,6 +2065,7 @@ a.active{
   height: 70vh;
   display: flex;
   align-items: center;
+  background-size: cover;
 }
 .about-page-background h2{
   font-size: 50px;
@@ -2117,7 +2127,18 @@ a.active{
   font-size: 60px;
   color: white;
 }
-
+.blog-card-text a:last-child{
+  font-size: 14px;
+  background: #ca773a;
+  padding: 8px 18px;
+  border-radius: 18px;
+  border: none;
+  transition: .4s;
+  color: white;
+}
+.blog-card-text a:last-child:hover{
+  font-size: 16px;
+}
 .detailedblog-page{
   width: 100%;
   background: black;
@@ -2192,7 +2213,9 @@ a.active{
 
 @media screen and (max-width: 767px) {
   
-  
+  .cart-page-content-pay{
+    height: auto;
+  }
   /* SWIPER */
   .popular-products .swiper-button-prev{
     display: none;
@@ -2574,7 +2597,24 @@ a.active{
   .roaster-text h4{
     font-size: 20px;
   }
-
+  .about-page-background{
+    height: 50vh;
+  }
+  .about-page-background h2{
+    font-size: 26px;
+  }
+  .blog-page-background{
+    height: 50vh;
+  }
+  .blog-page-background h2{
+    font-size: 26px;
+  }
+  .contact-page-info input{
+    width: 100%;
+  }
+  .contact-page-info input:nth-child(2){
+    margin-top: 25px;
+  }
   .about-content-changes{
     padding: 40px 0;
   }
@@ -2766,6 +2806,78 @@ a.active{
   .blog-card{
     width: 90%;
   }
+
+  .pay-modal-content{
+    width: 300px;
+    padding: 20px;
+    height: auto;
+  }
+  .closepaymodal{
+    right: 12px;
+    top: 12px;
+    font-size: 18px;
+  }
+  .payform input{
+    padding: 8px 15px;
+  }
+  
+  .cardnumber{
+    font-size: 15px;
+    color: white;
+    margin-bottom: 5px;
+    width: 100%;
+  }
+  .cardnumber1{
+    font-size: 15px;
+    width: 100%;
+    border: 2px solid #ca773a;
+  }
+  .datecvv{
+    width: 100%;
+    margin-top: 25px;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+  }
+  .date{
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+  }
+  .date label{
+    font-size: 15px;
+    color: white;
+    margin-bottom: 5px;
+    width: 100%;
+  }
+  .date input{
+    width: 100%;
+    font-size: 15px;
+    border: 2px solid #ca773a;
+  }
+  .cvv{
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+  }
+  .cvv label{
+    width: 100%;
+    font-size: 15px;
+    margin-bottom: 5px;
+    color: white;
+    margin-top: 20px;
+  }
+  .cvv input{
+    width: 100%;
+    font-size: 15px;
+    border: 2px solid #ca773a;
+  }
+  .pay-button{
+    margin-top: 25px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+  }
 }
 
 
@@ -2773,8 +2885,49 @@ a.active{
 
 
 @media screen and (min-width:768px) and (max-width:1024px) {
+  .myfooter-content-text{
+    width: 100% !important;
+  }
+  .cart-page-content-pay{
+    height: auto;
+  }
+  .blog-page-background{
+    height: 25vh;
+  }
+  .blog-page-background h2{
+    font-size: 33px;
+  }
+  .about-page-background h2{
+    font-size: 33px;
+  }
+  .about-page-background{
+    height: 25vh;
+  }
+  .story-content-text h2{
+    font-size: 32px;
+  }
+  .story-content-text p{
+    font-size: 15px;
+  }
+  .mobile-menu{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+  }
+  .mobile-menu-close{
+    width: 50%;
+    background: rgba(0, 0, 0, 0.368);
+  }
+  .mobile-menu-cont{
+    width: 50%;
+    background: #313034;
+    height: 100%;
+  }
+  .mobile-menu{
+    display: flex !important;
+  }
   .different-pages{
-    height: 100vh;
+    height: 60vh;
   }
   .different-pages-menu{
     padding: 70px 120px;
@@ -2817,6 +2970,12 @@ a.active{
   }
   .mymodal-content p{
     font-size: 17px;
+  }
+  .mymodal-content-img{
+    height: auto;
+  }
+  .mymodal-content-text{
+    height: auto;
   }
   .add-to-cart-content{
     display: flex;

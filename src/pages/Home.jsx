@@ -116,8 +116,8 @@ function Home() {
                 GO
             </button> */}
 
-            <div className={mymodal ? 'mymodal opened' : 'mymodal'}>
-                <div className="mymodal-content">
+            <div className={mymodal ? 'mymodal opened' : 'mymodal'} onClick={() => setMymodal(!mymodal)}>
+                <div className="mymodal-content" onClick={e => e.stopPropagation()}>
 
                     <div className="close-content" onClick={() => setMymodal(!mymodal)}>
                         <div className="line">
@@ -155,7 +155,7 @@ function Home() {
                                         <i className="fa-solid fa-heart"></i>
                                     </span>
                             }
-                            {/* <span className='wish' onClick={() => addToWishlist(moreData.id)} ><i className="fa-solid fa-heart"></i></span> */}
+                            
                         </div>
                 </div>
             </div>

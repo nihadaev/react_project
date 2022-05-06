@@ -1,4 +1,6 @@
 import React ,{useEffect} from 'react'
+import Bloghead from '../images/detailblog1.jpg'
+
 
 function Detailedblog() {
     useEffect(() => {
@@ -9,7 +11,7 @@ function Detailedblog() {
             <div className="container">
                 <h2>Blog</h2>
                 <div className="detailedblog-content">
-                    <img className='w-100 straw' src="https://images.unsplash.com/photo-1589119908995-c6837fa14848?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=580&q=80" alt="" />
+                    <img className='w-100 straw' src={Bloghead} alt="" />
                     <h4>Yanvar 4, 2022</h4>
 
                     <p>Barista kimi işləmiş bizlər bu ifadəni çox yaxşı bilirlər. Bu kimi qısa ola bilər: “Grande Latte, Extra Hot”; bir az daha dəqiq olaraq: “Südümə əlavə isti verə bilərəmmi?”; və ya hətta "Gedəcəyim yerə uzun bir avtomobilim var, ona görə də südün çox isti olması lazımdır ki, davam etsin..." kimi təfərrüatlı izahat.
