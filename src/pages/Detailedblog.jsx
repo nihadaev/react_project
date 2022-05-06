@@ -9,7 +9,7 @@ function Detailedblog() {
             <div className="container">
                 <h2>Blog</h2>
                 <div className="detailedblog-content">
-                    <img className='w-100' src="https://baker.qodeinteractive.com/wp-content/uploads/2017/01/blog-f-img-1-1.jpg" alt="" />
+                    <img className='w-100 straw' src="https://images.unsplash.com/photo-1589119908995-c6837fa14848?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=580&q=80" alt="" />
                     <h4>Yanvar 4, 2022</h4>
 
                     <p>Barista kimi işləmiş bizlər bu ifadəni çox yaxşı bilirlər. Bu kimi qısa ola bilər: “Grande Latte, Extra Hot”; bir az daha dəqiq olaraq: “Südümə əlavə isti verə bilərəmmi?”; və ya hətta "Gedəcəyim yerə uzun bir avtomobilim var, ona görə də südün çox isti olması lazımdır ki, davam etsin..." kimi təfərrüatlı izahat.
@@ -25,7 +25,7 @@ function Detailedblog() {
 
                     <div className="detailedblog-section">
                         <div className="detailedblog-section-img">
-                            <img src="https://baker.qodeinteractive.com/wp-content/uploads/2017/01/blog-single-image-1.jpg" alt="" className='w-100' />
+                            <img src="https://images.unsplash.com/photo-1622621746668-59fb299bc4d7?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=633&q=80" alt="" className='w-100' />
                         </div>
 
                         <div className="detailedblog-section-text">

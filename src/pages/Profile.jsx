@@ -24,7 +24,7 @@ function Profile() {
                   <NavLink to='/react_project/profile/kupon'>Kuponlar</NavLink>
                 </li>
                 <li>
-                  <NavLink to='/react_project/profile/orders'>Zakazlarım</NavLink>
+                  <NavLink to='/react_project/profile/orders'>Sifarişlərim</NavLink>
                 </li>
               </ul>
             </div>

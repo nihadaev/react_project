@@ -70,7 +70,7 @@ function Footer() {
                         <h2>Kontaktlarımız</h2>
                         <ul>
                             <li>
-                                <span><i className="fa-solid fa-location-dot"></i></span> <span> Caspian Business Center, <br /> 42 J. Jabbarli, Baku</span>
+                                <span><i className="fa-solid fa-location-dot"></i></span> <span> 10 Naxçıvan, Bakı 1005, Azərbaycan</span>
                             </li>
                             <li>
                                 <span><i className="fa-solid fa-phone"></i></span> <span>+994-51-624-22-19</span>
@@ -100,7 +100,7 @@ function Footer() {
                     </div>
 
                     <div className="myfooter-content-text">
-                        <h2>Akkaunt</h2>
+                        <h2>Hesab</h2>
                         <ul>
                             <li>
                                 <NavLink to="/react_project/profile/detailedprofile">Hesabım</NavLink>

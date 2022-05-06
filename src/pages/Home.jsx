@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react'
-import { NavLink } from 'react-router-dom';
+import { NavLink, Link } from 'react-router-dom';
 import { Swiper, SwiperSlide } from "swiper/react";
 
 // SWIPER SLIDE
@@ -50,9 +50,9 @@ function Home() {
     // CART
 
     // STORY
-    const {story} = useSelector (state => state)
+    const { story } = useSelector(state => state)
     //STORY
-    
+
     //WISHLIST
     const { wish, usercontacts } = useSelector(state => state)
     //WISHLIST
@@ -65,10 +65,10 @@ function Home() {
 
     //DATA FOR MODAL
     const [moreData, setMoreData] = useState({})
-    
+
     //DATA FOR MODAL
 
-    
+
 
 
     // SET DATA FOR MODAL
@@ -81,7 +81,7 @@ function Home() {
 
     // ADD TO CART
     const addtocart = (id) => {
-        
+
         let check = cart.some(e => e.id === id)
         check ?
             dispatch({ type: "INCCOUNT", payload: id }) :
@@ -91,27 +91,27 @@ function Home() {
     // ADD TO CART
 
     //ADD TO WISHLIST
-    const addToWishlist = (id) =>{
-        dispatch({type: "WISH", payload: id})   
+    const addToWishlist = (id) => {
+        dispatch({ type: "WISH", payload: id })
     }
-   // ADD TO WISHLIST
-   
-  
-   useEffect(() => {
-      
-        window.scrollTo(0, 0)
-       
-    
-  }, [])
+    // ADD TO WISHLIST
 
-  console.log(usercontacts);
-  
-      
+
+    useEffect(() => {
+
+        window.scrollTo(0, 0)
+
+
+    }, [])
+
+    console.log(usercontacts);
+
+
     return (
 
 
-        <>  
-        
+        <>
+
             {/* <button className="btn btn-success scroll-to"  >
                 GO
             </button> */}
@@ -131,7 +131,7 @@ function Home() {
                     <h2 className='w-100'> {moreData.title} </h2>
 
                     <div className="mymodal-content-img">
-                        <img src={moreData.image} alt="" className='w-100' />
+                        <img src={moreData.image} alt=""  />
                     </div>
 
                     <div className="mymodal-content-text">
@@ -140,21 +140,23 @@ function Home() {
                         <p> <span>Tərkibi</span> : {moreData.description} </p>
 
                         <h2> {moreData.price} ₼ </h2>
-                        <div className="add-to-cart-content w-100">
-                            <input type="text" value={moreData.count} />
+                        
+                    </div>
+
+                    <div className="add-to-cart-content w-100">
+                            
                             <button onClick={() => addtocart(moreData.id)}> Səbətə Əlavə Et</button>
                             {
-                                 wish.some( e => e.id === moreData.id ) ?
-                                 <span className='addedtowish' onClick={() => dispatch({type: "DELETEFROMWISH", payload: moreData.id})}>
-                                     <i className="fa-solid fa-heart"></i>
-                                 </span> :
-                                 <span onClick={() => addToWishlist(moreData.id)} >
-                                     <i className="fa-solid fa-heart"></i>
-                                 </span>
+                                wish.some(e => e.id === moreData.id) ?
+                                    <span className='addedtowish' onClick={() => dispatch({ type: "DELETEFROMWISH", payload: moreData.id })}>
+                                        <i className="fa-solid fa-heart"></i>
+                                    </span> :
+                                    <span onClick={() => addToWishlist(moreData.id)} >
+                                        <i className="fa-solid fa-heart"></i>
+                                    </span>
                             }
                             {/* <span className='wish' onClick={() => addToWishlist(moreData.id)} ><i className="fa-solid fa-heart"></i></span> */}
                         </div>
-                    </div>
                 </div>
             </div>
 
@@ -166,12 +168,12 @@ function Home() {
                     slidesPerView={1}
                     spaceBetween={30}
                     autoplay={{
-                        delay: 3000,
+                        delay: 1500,
                         disableOnInteraction: false,
                         pauseOnMouseEnter: true,
                     }}
 
-                    speed={2000}
+                    speed={1500}
                     effect={"cube"}
                     grabCursor={true}
                     cubeEffect={{
@@ -183,24 +185,24 @@ function Home() {
                     className="mySwiper">
 
                     <SwiperSlide>
-                        
-                            <div className="different-pages-menu">
-                                <div className="different-pages-content">
-                                    <h2>Bizim Menümuz</h2>
-                                    <NavLink to="/react_project/menu">Ətraflı</NavLink>
-                                </div>
+
+                        <div className="different-pages-menu">
+                            <div className="different-pages-content">
+                                <h2>Bizim Menumuz</h2>
+                                <NavLink to="/react_project/menu">Ətraflı</NavLink>
                             </div>
-                        
+                        </div>
+
                     </SwiperSlide>
 
                     <SwiperSlide>
                         <div className="different-pages-courier">
-                            
-                                <div className="different-pages-content">
-                                    <h2>Şəhərin ən dadlı  </h2>
-                                    <h2>isti içkiləri</h2>
-                                </div>
-                            
+
+                            <div className="different-pages-content">
+                                <h2>Şəhərin ən dadlı  </h2>
+                                <h2>isti içkiləri</h2>
+                            </div>
+
                         </div>
                     </SwiperSlide>
 
@@ -218,7 +220,7 @@ function Home() {
                         navigation={true}
                         loop={true}
                         autoplay={{
-                            delay: 2000,
+                            delay: 1000,
                             disableOnInteraction: false,
                             pauseOnMouseEnter: true,
                         }}
@@ -256,15 +258,15 @@ function Home() {
 
                                                     <li>
                                                         {
-                                                             wish.some( e => e.id === index.id ) ?
-                                                             <span className='addedtowish' onClick={() => dispatch({type: "DELETEFROMWISH", payload: index.id})}>
-                                                                 <i className="fa-solid fa-heart"></i>
-                                                             </span> :
-                                                             <span onClick={() => addToWishlist(index.id)} >
-                                                                 <i className="fa-solid fa-heart"></i>
-                                                             </span>
+                                                            wish.some(e => e.id === index.id) ?
+                                                                <span className='addedtowish' onClick={() => dispatch({ type: "DELETEFROMWISH", payload: index.id })}>
+                                                                    <i className="fa-solid fa-heart"></i>
+                                                                </span> :
+                                                                <span onClick={() => addToWishlist(index.id)} >
+                                                                    <i className="fa-solid fa-heart"></i>
+                                                                </span>
                                                         }
-                                                        
+
                                                     </li>
                                                     <li>
                                                         <span className='seemore' onClick={() => readMore(index.id)}>
@@ -330,31 +332,34 @@ function Home() {
                         <div className="action-1">
                             <img src="https://sun9-88.userapi.com/impg/doK3wZCuGh6hKvKCRz51M_YQiCY1zvXSfe3pOw/l1dxNJnDMdY.jpg?size=564x698&quality=95&sign=90081e8b0857b462e78a1e1bb53569e5&type=album" alt="" className='w-100 h-100' />
                             <div className="action-1-content">
-                                <span data-aos="fade-down" data-aos-duration="1000">1+1 Aksiyası</span>
+                                <span data-aos="fade-down" data-aos-duration="800">1+1 Aksiyası</span>
                             </div>
                         </div>
                         <div className="action-2">
                             <div className="action-4">
-                               <div className="action-1-content">
-                               <span data-aos="fade-down" data-aos-duration="1000">Ad günündə bütün məhsullar pulsuz </span>
-                               </div>
+                                
                                 <img src="https://images.wallpaperscraft.ru/image/single/kofe_kniga_ochki_140830_1920x1080.jpg" alt="" className='w-100 h-100' />
+                                <div className="action-1-content">
+                                    <span data-aos="fade-down" data-aos-duration="800">Ad günündə bütün məhsullar pulsuz </span>
+                                </div>
                             </div>
                             <div className="action-5">
                                 <img src="https://sun9-35.userapi.com/impg/Rq9mC_vuOBMroBvNAyNHN-y7Kf53wd1twPIUpQ/jpvBSRdGkjo.jpg?size=735x1062&quality=95&sign=1f4f88fc35d275b51131535a7b98e579&type=album" alt="" className='w-100 h-100' />
                             </div>
                             <div className="action-6">
-                            <div className="action-1-content">
-                                <span data-aos="fade-down" data-aos-duration="1000">1+1 Aksiyası</span>
-                            </div>
+                                
                                 <img src="https://sun9-81.userapi.com/impg/Z2gq2J1lzyO7BIO5xQBkjo0vV7IR-RjVzYgC-Q/HDjSqfUVfYs.jpg?size=607x759&quality=95&sign=f009ab55f25dd071354d9e95fae8ddc0&type=album" alt="" className='w-100 h-100' />
+                                <div className="action-1-content">
+                                    <span data-aos="fade-down" data-aos-duration="800">1+1 Aksiyası</span>
+                                </div>
                             </div>
                         </div>
                         <div className="action-3">
-                        <div className="action-1-content">
-                                <span data-aos="fade-down" data-aos-duration="1000"> 1+1 Aksiyası</span>
-                            </div>
+                            
                             <img src="https://sun9-1.userapi.com/impg/4vaAVjOnOBe7xPuRagjA327qaEGqpIpRlLdm8w/N9OnbDmnJoY.jpg?size=720x1080&quality=95&sign=2e7c5430401cfd99b16515acf3e1941d&type=album" alt="" className='w-100 h-100' />
+                            <div className="action-1-content">
+                                <span data-aos="fade-down" data-aos-duration="800"> 1+1 Aksiyası</span>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -370,11 +375,11 @@ function Home() {
                             spaceBetween={30}
                             centeredSlides={true}
                             autoplay={{
-                                delay: 3000,
+                                delay: 700,
                                 disableOnInteraction: false,
                                 pauseOnMouseEnter: true,
                             }}
-                            speed={2000}
+                            speed={1500}
                             loop={true}
                             pagination={{
                                 clickable: true,
@@ -441,11 +446,9 @@ function Home() {
                         loop={true}
                         navigation={true}
                         autoplay={{
-                            delay: 1000,
-                            disableOnInteraction: false,
-                            pauseOnMouseEnter: true,
+                            delay: 100
                         }}
-                        speed={1000}
+                        speed={700}
 
                         breakpoints={{
                             250: {
@@ -490,6 +493,7 @@ function Home() {
                 <div className="container">
                     <div className="story-content">
                         <div className="story-content-text" data-aos="fade-right">
+                            <h2>Haqqımızda</h2>
                             <p className='w-100'>2017-ci ilin aprelində Yogyakartadan olan iki gənc tərəfindən qurulan Couvee, hər kəsin qəhvədən həzz ala biləcəyi ideyasından irəli gəlir. odur
                                 hər şey Jalan Kaliurangdakı kiçik kirayə binada başladı. 2019-cu ilə qədər Couvee-nin 5 filialı var, onlardan biri Cakartada yerləşir.</p>
 
@@ -504,6 +508,26 @@ function Home() {
                         </div>
                     </div>
                 </div>
+            </div>
+
+            <div className="about-contact-section">
+                <div className="container">
+                    <div className="about-contact">
+                        <div className="about-contact-img">
+                            <img src="https://cdn.sanity.io/images/0cvyr85o/us/b11ceb34a91d88d1d2548f1b7ba1dfcb5e4458ac-2240x2000.jpg?rect=0,0,2239,2000&w=1366&h=1220&auto=format" className='w-100' alt="" />
+                        </div>
+
+                        <div className="about-contact-text">
+                            <h3>Indi...</h3>
+                            <h4>Gəlin qəhvə içək</h4>
+                            <div className="about-contact-text-buttons">
+                                <Link to='/react_project/menu'>Menu</Link>
+                                <Link to='/react_project/contacts'>Əlaqə</Link>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
             </div>
         </>
     )

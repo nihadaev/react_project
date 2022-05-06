@@ -16,6 +16,7 @@ import Kupon from "./pages/Kupon";
 import Blogs from "./pages/Blogs";
 import Detailedblog from "./pages/Detailedblog";
 import Load from './images/loading.gif'
+import Orders from "./pages/Orders";
 
 
 function App() {
@@ -109,6 +110,7 @@ function App() {
         <Route path="/react_project/cart" element= {<Cart />} />
         <Route path="/react_project/profile/wish" element= { <Wish /> } />
         <Route path="/react_project/profile/kupon" element= { <Kupon /> } />
+        <Route path="/react_project/profile/orders" element= { <Orders /> } />
         <Route path="/react_project/about" element= {<About />} />
         <Route path="/react_project/contacts" element= {<Contacts />} />
         <Route path="/react_project/profile/detailedprofile" element= {<Profile />} />

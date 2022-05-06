@@ -99,12 +99,22 @@ function Menu() {
                         <p> <span>Tərkibi</span> : {moreData.description} </p>
 
                         <h2> {moreData.price} ₼ </h2>
-                        <div className="add-to-cart-content w-100">
-                            <input type="text" value={moreData.count} />
-                            <button onClick={() => addtocart(moreData.id)}> Səbətə Əlavə Et</button>
-                            <span className='wish' onClick={() => addToWishlist(moreData.id)} ><i className="fa-solid fa-heart"></i></span>
-                        </div>
+                       
                     </div>
+
+                    <div className="add-to-cart-content w-100">
+                            
+                            <button onClick={() => addtocart(moreData.id)}> Səbətə Əlavə Et</button>
+                            {
+                                  wish.some(e => e.id === moreData.id) ?
+                                  <span className='addedtowish' onClick={() => dispatch({ type: "DELETEFROMWISH", payload: moreData.id })}>
+                                      <i className="fa-solid fa-heart"></i>
+                                  </span> :
+                                  <span onClick={() => addToWishlist(moreData.id)} >
+                                      <i className="fa-solid fa-heart"></i>
+                                  </span>
+                            }
+                        </div>
                 </div>
             </div>
 
@@ -112,7 +122,9 @@ function Menu() {
                 <h2>Menu</h2>
                 <div className="menu-page-content">
                     <div className="menu-page-list">
+
                         <div className="menu-page-list-content">
+                            <NavLink to='/react_project/menu'><h3>Bütün Məhsullar</h3></NavLink>
                             {
                                 categories.map((index, key) => (
                                     <NavLink to={"/menu/" + index.toLowerCase().replaceAll(' ', '')} key={key}><h3 > {index} </h3></NavLink>

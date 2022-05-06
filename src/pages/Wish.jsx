@@ -85,9 +85,17 @@ function Wish() {
 
             <h2> {moreData.price} ₼ </h2>
             <div className="add-to-cart-content w-100">
-              <input type="text" value={moreData.count} />
               <button onClick={() => addtocart(moreData.id)}> Səbətə Əlavə Et</button>
-              <span className='wish' onClick={() => addToWishlist(moreData.id)} ><i className="fa-solid fa-heart"></i></span>
+              {
+                  wish.some(e => e.id === moreData.id) ?
+                  <span className='addedtowish' onClick={() => dispatch({ type: "DELETEFROMWISH", payload: moreData.id })}>
+                      <i className="fa-solid fa-heart"></i>
+                  </span> :
+                  <span onClick={() => addToWishlist(moreData.id)} >
+                      <i className="fa-solid fa-heart"></i>
+                  </span>
+              }
+              
             </div>
           </div>
         </div>
@@ -108,7 +116,7 @@ function Wish() {
                   <NavLink to='/react_project/profile/kupon'>Kuponlar</NavLink>
                 </li>
                 <li>
-                  <NavLink to='/react_project/profile/orders'>Zakazlarım</NavLink>
+                  <NavLink to='/react_project/profile/orders'>Sifarişlərim</NavLink>
                 </li>
               </ul>
             </div>

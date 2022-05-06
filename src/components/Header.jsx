@@ -23,7 +23,7 @@ function Header() {
 
     //AOS
     const [menu, setMenu] = useState(false)
-    const { cart } = useSelector(state => state)
+    const { cart, wish } = useSelector(state => state)
     const { products } = useSelector(state => state)
 
     const dispatch = useDispatch()
@@ -207,16 +207,17 @@ function Header() {
                                     <span><i className="fa-solid fa-bars" onClick={() => setMenu(!menu)}></i></span>
                                 </li>
                                 <li>
-                                    <NavLink to="/react_project/profile/wish">
-                                        <i className="fa-regular fa-heart"></i>
+                                    <NavLink to="/react_project/profile/wish" className='wishhart'>
+                                        <i className="fa-regular fa-heart wishheart"></i>
+                                        <span className='wishcount'> {wish.length} </span>
                                     </NavLink>
                                 </li>
-                                <li><span onClick={() => setSearch(!search)}><i className="fa-solid fa-magnifying-glass"></i></span></li>
+                                <li><span onClick={() => setSearch(!search)}><i className="fa-solid fa-magnifying-glass searchglass"></i></span></li>
                                 <li><NavLink to="/react_project/cart" className='mycart'>
                                     <img src={card} alt="" />
                                     <span className='cartcount'> {cart.length} </span>
                                 </NavLink></li>
-                                <li> <NavLink to="/react_project/profile/detailedprofile"><i className="fa-regular fa-user"></i></NavLink> </li>
+                                <li> <NavLink to="/react_project/profile/detailedprofile"><i className="fa-regular fa-user userhov"></i></NavLink> </li>
                             </ul>
                         </div>
 

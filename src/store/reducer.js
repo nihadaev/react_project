@@ -86,7 +86,7 @@ export default function reducer(state = initState, action) {
             return {
                 ...state, cart: [...state.cart.map(e => {
                     if (e.id === action.payload) {
-                        e.total = e.price * e.count
+                        e.total =  e.price * e.count
                     }
                     return e
                 })]
