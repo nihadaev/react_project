@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/react_project/static/css/main.ffd4d464.css",
-    "main.js": "/react_project/static/js/main.3ff66356.js",
+    "main.css": "/react_project/static/css/main.d8f6acc8.css",
+    "main.js": "/react_project/static/js/main.15f6cf9c.js",
     "static/media/background2.jpg": "/react_project/static/media/background2.b025c4c38a366d14d547.jpg",
     "static/media/background3.jpg": "/react_project/static/media/background3.e5450c43453b03f9aa29.jpg",
     "static/media/kuon1.png": "/react_project/static/media/kuon1.c996a49087ec00a0f2d5.png",
@@ -9,12 +9,13 @@
     "static/media/kuon2.png": "/react_project/static/media/kuon2.5f22718dd4bc26fe7112.png",
     "static/media/changebg.webp": "/react_project/static/media/changebg.ca58fb6bbca380330f98.webp",
     "static/media/customers.jpg": "/react_project/static/media/customers.0037d382f7b56d8277e0.jpg",
+    "static/media/detailblog1.jpg": "/react_project/static/media/detailblog1.a344facd60a79dbd71d0.jpg",
     "index.html": "/react_project/index.html",
-    "main.ffd4d464.css.map": "/react_project/static/css/main.ffd4d464.css.map",
-    "main.3ff66356.js.map": "/react_project/static/js/main.3ff66356.js.map"
+    "main.d8f6acc8.css.map": "/react_project/static/css/main.d8f6acc8.css.map",
+    "main.15f6cf9c.js.map": "/react_project/static/js/main.15f6cf9c.js.map"
   },
   "entrypoints": [
-    "static/css/main.ffd4d464.css",
-    "static/js/main.3ff66356.js"
+    "static/css/main.d8f6acc8.css",
+    "static/js/main.15f6cf9c.js"
   ]
 }
